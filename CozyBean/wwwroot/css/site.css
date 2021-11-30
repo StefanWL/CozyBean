@@ -1,0 +1,168 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+@import url('https://fonts.googleapis.com/css2?family=family=Montserrat:wght@400;600');
+@import url("https://p.typekit.net/p.css?s=1&k=tig5ggp&ht=tk&f=46211&a=92478119&app=typekit&e=css");
+
+@font-face {
+    font-family: "swear-display";
+    src: url("https://use.typekit.net/af/6f50e1/00000000000000007735e25b/30/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3") format("woff2"),url("https://use.typekit.net/af/6f50e1/00000000000000007735e25b/30/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3") format("woff"),url("https://use.typekit.net/af/6f50e1/00000000000000007735e25b/30/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3") format("opentype");
+    font-display: auto;
+    font-style: normal;
+    font-weight: 700;
+}
+
+body {
+    font: normal 1.1em/1.2 'Montserrat',sans-serif;
+    font-weight: 400;
+    margin: 0;
+    color: black;
+    margin-bottom: 60px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Swear-display',serif;
+    font-weight: 700;
+}
+
+a .navbar-brand {
+    white-space: normal;
+    text-align: center;
+    word-break: break-all;
+}
+
+.nav-item {
+    font-family: 'Swear-display',serif;
+    font-weight: 700;
+    font-size: 1.2em;
+}
+
+.padded-text{
+    padding: 9%;
+}
+
+/* Provide sufficient contrast against white background */
+a {
+    color: #0366d6;
+}
+
+.btn-light {
+    color: black;
+    background-color: white;
+    border-style: solid;
+    border-width: 2px;
+    border-color: black;
+    border-radius: 0;
+}
+
+.btn-light:hover {
+    color: black;
+    border-style: solid;
+    border-width: 2px;
+    border-color: black;
+    border-radius: 0;
+}
+
+.socialmedia {
+    padding: 0;
+}
+
+.socialmedia li {
+    display: inline-block;
+    list-style-type: none;
+}
+
+.social-icon {
+    height: 50px;
+    padding-top: 10%;
+    padding-bottom: 10%;
+    margin-right: 1em;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+    color: #fff;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
+}
+
+.image-fit {
+    height: 100%;
+    width: 100%;
+}
+
+#friends-image {
+    background-image: url(../Content/cozybeanjumbotron.png);
+    background-size: cover;
+    color: white;
+}
+
+#stage-image {
+    background-image: url(../Content/stage.png);
+    background-size: cover;
+}
+
+#stage-logo-overlay {
+    position: relative;
+    width: 15%;
+    left: 42.5%;
+    margin-top: 2.5%;
+    margin-bottom: 2.5%;
+}
+
+.off-white{
+    background-color: #f2eeeb
+
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+.border-top {
+    border-top: 1px solid #e5e5e5;
+}
+
+.border-bottom {
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow {
+    box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy {
+    font-size: 1rem;
+    line-height: inherit;
+}
+
+#contact-submit {
+    width: 20%;
+    margin-left: 40%;
+}
+
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+
+.footer {
+    position: relative;
+    width: 100%;
+    background-color: #242424;
+}
+
+#footer-logo{
+    width: 80%;
+    margin-left: 10%;
+}

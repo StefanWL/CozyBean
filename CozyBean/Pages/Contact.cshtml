@@ -1,0 +1,44 @@
+﻿@page
+@model CozyBean.Pages.ContactModel
+@{
+}
+<div class="container-fluid p-0">
+    <div class="row">
+        <div class="col-12 col-sm-6 padded-text">
+            <h1>Contact Us</h1>
+            <p>contact@cozybean.com</p>
+            <p><a href="tel:+1416-123-4567" class="phone">416-123-4567</a></p>
+            <p>655 QUEEN ST W<</p>
+            <ul class="socialmedia">
+                <li><a href="#"><img src="~/Content/2021_Facebook_icon.png" class="social-icon" /></a></li>
+                <li><a href="#"><img src="~/Content/instagram-colourful-icon.png" class="social-icon" /></a></li>
+                <li><a href="#"><img src="~/Content/twittericon.png" class="social-icon" /></a></li>
+            </ul>
+        </div>
+        <div class="col-12 col-sm-6 p-0">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d721.7616728431046!2d-79.4045280707757!3d43.64719689869511!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b34e74661d865%3A0x27f90593d0522340!2sQueen%20St%20W%20%26%20Bathurst%20St%2C%20Toronto%2C%20ON%20M5V%202B7!5e0!3m2!1sen!2sca!4v1637692945509!5m2!1sen!2sca" class="image-fit" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+    </div>
+    <div class="row p-0 mt-5 off-white">
+        <div class="col-8 padded-text">
+            <form action="#" method="POST">
+                <div class="ml-5">
+                    <label for="fname">First Name:</label>
+                    <input type="text" id="fname" name="fname">
+                    <label for="lname">Last Name:</label>
+                    <input type="text" id="lname" name="fname">
+                </div>
+                <div class="ml-5">
+                    <label for="comment">Comment:</label><br>
+                    <textarea name="comment" rows="8" cols="60"></textarea>
+                </div>
+            </form>
+        </div>
+        <div class="col-2">
+            <p style="padding-top: 70%">Send us a message and we will reply within one business day. You can also drop us an email anytime or feel free to give us a call. We'd love to hear from you! </p>
+        </div>
+    </div>
+    <div class="row off-white">
+        <input class="btn-light mb-5" id="contact-submit" type="submit" value="Submit">
+    </div>
+</div>
