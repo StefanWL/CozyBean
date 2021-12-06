@@ -40,10 +40,20 @@ a .navbar-brand {
     padding: 9%;
 }
 
-/* Provide sufficient contrast against white background */
-a {
-    color: #0366d6;
+.card {
+    color: white;
+    background-color: #242424;
+    border-radius: 1em;
 }
+
+.card a {
+    color: white;
+}
+
+.menu-button{
+    color:black;
+}
+
 
 .btn-light {
     color: black;

@@ -1,4 +1,60 @@
-﻿@page
+﻿@page "/Order/{id}"
 @model CozyBean.Pages.OrderModel
 @{
 }
+<div class="page-container">
+    <main id="main">
+        <div id="drink-intro" class="flex-container content-left content-darker">
+            <div id="food-imageholder" class="visual-box">
+            </div>
+            <div class="content-box">
+                <h1 id="item-name"></h1>
+                <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non porttitor tortor, vel pretium erat. Duis risus ipsum, interdum ac elit aliquam, varius rutrum tortor. Phasellus fringilla sollicitudin viverra.</p>
+            </div>
+        </div>
+        <div id="drink-custom" class="flex-container content-right">
+            <div class="content-box">
+                <h2>Customization</h2>
+                <select name="size-dropdown" id="size-dropdown">
+                    <option value="Small">Small</option>
+                    <option value="Medium">Medium</option>
+                    <option value="Large">Large</option>
+                </select>
+                <select name="milk-dropdown" id="milk-dropdown">
+                    <option value="No Milk">No Milk</option>
+                    <option value="Skim Milk">Skim Milk</option>
+                    <option value="Whole Milk">Whole Milk</option>
+                    <option value="Oat Milk">Oat Milk</option>
+                    <option value="Almond Milk">Almond Milk</option>
+                </select>
+            </div>
+            <div class="visual-box">
+                <div id="drink-details">
+                    <h2>Order Summary</h2>
+                    <table id="summary-table">
+                        <tr id="size-row">
+                            <td id="size-lable">Size</td>
+                            <td id="drink-size">Small</td>
+                        </tr>
+                        <tr id="milk-row">
+                            <td id="milk-lable">Milk Type</td>
+                            <td id="milk-type">No Milk</td>
+                        </tr>
+                        <tr>
+                            <td>Toppings</td>
+                            <td>Topping</td>
+                        </tr>
+                        <tr>
+                            <td>Flavours</td>
+                            <td>Flavour</td>
+                        </tr>
+                    </table>
+                    <div class="flex-container">
+                        <a href="drinkmenu.html" class="button" id="cart-button">Add to Cart</a>
+                        <a href="checkout.html" class="button" id="checkout-button">Order</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>

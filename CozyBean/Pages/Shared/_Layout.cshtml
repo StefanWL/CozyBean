@@ -19,7 +19,7 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between align mb-3">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-page="Menu">Menu</a>
+                            <a class="nav-link text-dark" asp-page="Menu" asp-route-category="popular">Menu</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-page="About">About Us</a>
@@ -35,7 +35,7 @@
                         </li>
                     </ul>
                 </div>
-                <a asp-page="Menu" class="btn btn-light">Order Ahead</a>
+                <a asp-page="Menu" asp-route-category="popular" class="btn btn-light">Order Ahead</a>
             </div>
         </nav>
     </header>
