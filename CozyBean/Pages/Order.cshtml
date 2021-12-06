@@ -2,59 +2,113 @@
 @model CozyBean.Pages.OrderModel
 @{
 }
-<div class="page-container">
-    <main id="main">
-        <div id="drink-intro" class="flex-container content-left content-darker">
-            <div id="food-imageholder" class="visual-box">
-            </div>
-            <div class="content-box">
-                <h1 id="item-name"></h1>
-                <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non porttitor tortor, vel pretium erat. Duis risus ipsum, interdum ac elit aliquam, varius rutrum tortor. Phasellus fringilla sollicitudin viverra.</p>
-            </div>
+
+<div class="container-fluid">
+    <div id="order-top" class="row justify-content-center">
+        <div class="col-12 col-sm-4">
+            <img src=@Model.Item.ImageURL class="image-fit"/>
         </div>
-        <div id="drink-custom" class="flex-container content-right">
-            <div class="content-box">
-                <h2>Customization</h2>
-                <select name="size-dropdown" id="size-dropdown">
+        <div class="col-12 col-sm-4">
+            <h1>@Model.Item.Name</h1>
+            <p>@Model.Item.Description</p>
+            <ul id="details-list">
+                @if (@Model.Item.Vegan)
+                {
+                    <li>V</li>
+                }
+                @if (@Model.Item.GlutenFree)
+                {
+                    <li>GF</li>
+                }                
+                <li>@Model.Item.Calories Calories</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12 col-sm-6 padded-text">
+            <h2>Customization</h2>
+            @if (@Model.Item.SizeOptions)
+            {
+                <select name="size-dropdown" class="customization-option">
                     <option value="Small">Small</option>
                     <option value="Medium">Medium</option>
                     <option value="Large">Large</option>
                 </select>
-                <select name="milk-dropdown" id="milk-dropdown">
+            }
+            @if (@Model.Item.MilkOptions)
+            {
+                <select name="milk-dropdown" class="customization-option">
                     <option value="No Milk">No Milk</option>
                     <option value="Skim Milk">Skim Milk</option>
                     <option value="Whole Milk">Whole Milk</option>
                     <option value="Oat Milk">Oat Milk</option>
                     <option value="Almond Milk">Almond Milk</option>
                 </select>
-            </div>
-            <div class="visual-box">
-                <div id="drink-details">
-                    <h2>Order Summary</h2>
-                    <table id="summary-table">
-                        <tr id="size-row">
-                            <td id="size-lable">Size</td>
-                            <td id="drink-size">Small</td>
-                        </tr>
-                        <tr id="milk-row">
-                            <td id="milk-lable">Milk Type</td>
-                            <td id="milk-type">No Milk</td>
-                        </tr>
-                        <tr>
-                            <td>Toppings</td>
-                            <td>Topping</td>
-                        </tr>
-                        <tr>
-                            <td>Flavours</td>
-                            <td>Flavour</td>
-                        </tr>
-                    </table>
-                    <div class="flex-container">
-                        <a href="drinkmenu.html" class="button" id="cart-button">Add to Cart</a>
-                        <a href="checkout.html" class="button" id="checkout-button">Order</a>
-                    </div>
-                </div>
-            </div>
+            }
+            @if (@Model.Item.SugarOptions)
+            {
+                <select name="sugar-dropdown" class="customization-option">
+                    <option value="None">None</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                </select>
+            }
+            @if (@Model.Item.WarmOptions)
+            {
+                <select name="warm-dropdown" class="customization-option">
+                    <option value="Warmed Up">Warmed Up</option>
+                    <option value="Not Warm">Not Warm</option>
+                </select>
+            }
         </div>
-    </main>
+        <div class="col-12 col-sm-6 padded-text">
+            <table>
+                @if (@Model.Item.SizeOptions)
+                {
+                    <tr id="size-row">
+                        <td id="size-lable">Size</td>
+                        <td id="drink-size">Small</td>
+                    </tr>
+                }
+                @if (@Model.Item.MilkOptions)
+                {
+                    <tr id="milk-row">
+                        <td id="milk-lable">Milk Type</td>
+                        <td id="milk-type">No Milk</td>
+                    </tr>
+                }
+                @if (@Model.Item.SugarOptions)
+                {
+                    <tr id="sugar-row">
+                        <td id="sugar-lable">Sugar</td>
+                        <td id="sugar-amount">None</td>
+                    </tr>
+                }
+                @if (@Model.Item.WarmOptions)
+                {
+                    <tr id="warm-row">
+                        <td id="warm-lable">Heat</td>
+                        <td id="warm-amount">Not Warm</td>
+                    </tr>
+                }
+                <tr>
+                    <td>Calories</td>
+                    <td>@Model.Item.Calories</td>
+                </tr>
+                <tr>
+                    <td>Price</td>
+                    <td>@Model.Item.Price</td>
+                </tr>
+            </table>
+        </div>
+    </div>
 </div>
+    
+<div class="flex-container">
+    <a href="drinkmenu.html" class="button" id="cart-button">Add to Cart</a>
+    <a href="checkout.html" class="button" id="checkout-button">Order</a>
+</div>
+            

@@ -44,8 +44,13 @@ a .navbar-brand {
     color: white;
     background-color: #242424;
     border-radius: 1em;
+    padding: 0;
+    margin: 1em;
 }
-
+.card-img-top {
+    border-top-left-radius: 1em;
+    border-top-right-radius: 1em;
+}
 .card a {
     color: white;
 }
@@ -155,6 +160,11 @@ button.accept-policy {
 #contact-submit {
     width: 20%;
     margin-left: 40%;
+}
+
+#order-top {
+    color: white;
+    background-color: #242424;
 }
 
 

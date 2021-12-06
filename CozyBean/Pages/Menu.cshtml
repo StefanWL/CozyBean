@@ -37,8 +37,8 @@
         <div class="row">
             @foreach (var item in Model.menuItems)
             {
-                <div class="col-4 card">
-                    <a asp-page="Order" asp-route-id=@item.ID><img src=@item.ImageURL class="cart-image-top image-fit" /></a>
+                <div class="col-3 card">
+                    <a asp-page="Order" asp-route-id=@item.ID><img src=@item.ImageURL class="card-img-top" /></a>
                     <h3><a asp-page="Order" asp-route-id=@item.ID>@item.Name</a></h3>
                     <p>@item.Description</p>
                 </div>
