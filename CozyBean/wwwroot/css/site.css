@@ -24,6 +24,11 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 700;
 }
 
+td {
+    padding-right: 0.5em;
+    padding-left: 0.5em;
+}
+
 a .navbar-brand {
     white-space: normal;
     text-align: center;
@@ -167,6 +172,13 @@ a:hover{
     top: 0;
     display:none
 }
+.panel-label {
+    position: absolute;
+    bottom: 0;
+    padding-bottom: 2em;
+    padding-left: 2em;
+    color: white;
+}
 
 #friends-image {
     background-image: url(../Content/cozybeanjumbotron.png);
@@ -231,6 +243,11 @@ button.accept-policy {
     background-color: #242424;
 }
 
+#order-top div {
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+
 
 /* Sticky footer styles
 -------------------------------------------------- */
@@ -249,3 +266,5 @@ html {
     width: 80%;
     margin-left: 10%;
 }
+
+

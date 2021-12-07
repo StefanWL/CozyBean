@@ -26,17 +26,17 @@
         </div>
     </div>
     <div class="row p-0">
-        <div class="col-12 col-sm-6 padded-text">
-            <h2>Who are we? Community Oriented</h2>
+        <div class="col-12 col-lg-6 padded-text">
+            <h2 class="text-center text-lg-left">Who are we? Community Oriented</h2>
             <a asp-page="About" class="btn btn-light mt-5">Learn More</a>
         </div>
-        <div class="col-12 col-sm-6 padded-text">
-            <p class="mb-5">Are you a coffee lover, open to new tastes? A tired student who just got off class and wants to take a cozy break? Or do you just want to look for a cozy place where you can meet your friends and spend pleasant moments on cold winter days? Cozy Bean Cafe is the place for you. We’re happy to offer you this unique cozy environment where you can feel welcomed and happy with every sip. We’re more than just a place, we’re Cozy Bean Cafe.</p>
+        <div class="col-12 col-lg-6 padded-text">
+            <p class="mb-5 text-center text-lg-left">Are you a coffee lover, open to new tastes? A tired student who just got off class and wants to take a cozy break? Or do you just want to look for a cozy place where you can meet your friends and spend pleasant moments on cold winter days? Cozy Bean Cafe is the place for you. We’re happy to offer you this unique cozy environment where you can feel welcomed and happy with every sip. We’re more than just a place, we’re Cozy Bean Cafe.</p>
             <h3>We are open today from 9am until 10pm</h3>
         </div>
     </div>
     <div class="row p-0">
-        <div class="col-12 col-sm-6 padded-text off-white">
+        <div class="col-12 col-lg-6 padded-text off-white">
             <h2>655 QUEEN ST W</h2>
             <p>We are located at the intersection of Bathurst & Queen</p>
             <h3>Store Hours</h3>
@@ -45,15 +45,15 @@
             <h3>Telephone</h3>
             <p><a href="tel:+1416-123-4567" class="phone">416-123-4567</a></p>
         </div>
-        <div class="col-12 col-sm-6 p-0">
+        <div class="col-12 col-lg-6 p-0">
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d721.7616728431046!2d-79.4045280707757!3d43.64719689869511!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b34e74661d865%3A0x27f90593d0522340!2sQueen%20St%20W%20%26%20Bathurst%20St%2C%20Toronto%2C%20ON%20M5V%202B7!5e0!3m2!1sen!2sca!4v1637692945509!5m2!1sen!2sca" class="image-fit" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
         </div>
     </div>
     <div class="row p-0">
-        <div class="col-12 col-sm-6 p-0">
+        <div class="col-12 col-lg-6 p-0">
             <img src="~/Content/livemusic.png" alt="Live music" class="image-fit" />
         </div>
-        <div class="col-12 col-sm-6 padded-text">
+        <div class="col-12 col-lg-6 padded-text">
             <h2>We Have Live Entertainment</h2>
             <h3>Current Schedule</h3>
             <table id="schedule-table">
@@ -97,31 +97,44 @@
         </div>
     </div>
     <div class="row p-0">
-        <div class="col-12 col-sm-7 padded-text off-white">
+        <div class="col-12 col-lg-7 padded-text off-white">
             <h2>Try Our New <strong>Caramel Oat Latte</strong></h2>
             <p>
                 Enjoy your holiday with one of our hand-craft cafes from the baristas.
             </p>
             <a asp-page="Menu" class="btn btn-light mt-5">Learn More</a>
         </div>
-        <div class="col-12 col-sm-5 p-0">
+        <div class="col-12 col-lg-5 p-0">
             <img src="~/Content/holidaycoffee.png" class="image-fit" />
         </div>
     </div>
     <div class="row p-0">
-        <div class="col-12 col-sm-4 p-0 reveal-panel">
-            <img src="~/Content/drinks.png" class="image-fit image-back" />
-            <img src="~/Content/cartoondrink.png" class="image-fit image-front" />
-
+        <div class="col-12 col-lg-4 p-0 reveal-panel">
+            <a asp-page="Menu">
+                <img src="~/Content/drinks.png" class="image-fit image-back" />
+            </a>
+            <a asp-page="Menu">
+                <img src="~/Content/cartoondrink.png" class="image-fit image-front" />
+            </a>
+            <h2 class="panel-label">Popular Drinks</h2>
         </div>
-        <div class="col-12 col-sm-4 p-0 reveal-panel">
-            <img src="~/Content/food.png" class="image-fit image-back" />
-            <img src="~/Content/cartoonfood.png" class="image-fit image-front" />
-
+        <div class="col-12 col-lg-4 p-0 reveal-panel">
+            <a asp-page="Menu">
+                <img src="~/Content/food.png" class="image-fit image-back" />
+            </a>
+            <a asp-page="Menu">
+                <img src="~/Content/cartoonfood.png" class="image-fit image-front" />
+            </a>
+            <h2 class="panel-label">Popular Foods</h2>
         </div>
-        <div class="col-12 col-sm-4 p-0 reveal-panel">
-            <img src="~/Content/meals.png" class="image-fit image-back" />
-            <img src="~/Content/cartoonmeal.png" class="image-fit image-front" />
+        <div class="col-12 col-lg-4 p-0 reveal-panel">
+            <a asp-page="Menu">
+                <img src="~/Content/meals.png" class="image-fit image-back" />
+            </a>
+            <a asp-page="Menu">
+                <img src="~/Content/cartoonmeal.png" class="image-fit image-front" />
+            </a>
+            <h2 class="panel-label">Popular Meals</h2>
         </div>
     </div>
 </div>
