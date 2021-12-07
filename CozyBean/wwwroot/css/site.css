@@ -44,6 +44,27 @@ a:hover{
     padding: 9%;
 }
 
+.food-menu{
+    background-color: #242424;
+    border-radius: 1em;
+    font-size: 1.5em;
+    padding:0.5em;
+}
+
+.food-menu a {
+    color: white;
+}
+
+#menu-contents {
+    margin-left: 1em;
+}
+#menu-contents ul {
+    list-style-type: none;
+}
+#menu-dropdown{
+    display:none;
+}
+
 .card {
     color: white;
     background-color: #242424;
@@ -52,10 +73,25 @@ a:hover{
     margin: 1em;
 }
 .card-img-top {
+    height: 0;
+    padding-bottom:75%;
+    overflow:hidden;
+}
+.menu-item-image {
     border-top-left-radius: 1em;
     border-top-right-radius: 1em;
+    width:100%;
+    object-fit: cover;
 }
-.card a {
+.card-text-bottom {
+    width: 100%;
+    height: 0;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 10%;
+    padding-bottom: 65%;
+}
+.card-text-bottom a {
     color: white;
 }
 
