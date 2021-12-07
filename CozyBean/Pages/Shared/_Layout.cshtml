@@ -3,7 +3,8 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - CozyBeanCafe</title>
+    <meta http-equiv="Cache-Control" content="no-store" />
+    <title>@ViewData["Title"] - CozyBean</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
 </head>
@@ -18,24 +19,72 @@
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between align mb-3">
                     <ul class="navbar-nav flex-grow-1">
+
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-page="Menu" asp-route-category="popular">Menu</a>
+                            @if (@ViewData["Title"] == "Menu")
+                            {
+                                <div class="nav-underline-active"></div>
+                            }
+                            else
+                            {
+                                <div class="nav-underline-hidden"></div>
+                            }
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-page="About">About Us</a>
+                            @if (@ViewData["Title"] == "About")
+                            {
+                                <div class="nav-underline-active"></div>
+                            }
+                            else
+                            {
+                                <div class="nav-underline-hidden"></div>
+                            }
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-page="Location">Location</a>
+                            @if (@ViewData["Title"] == "Location")
+                            {
+                                <div class="nav-underline-active"></div>
+                            }
+                            else
+                            {
+                                <div class="nav-underline-hidden"></div>
+                            }
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-page="Entertainment">Entertainment</a>
+                            @if (@ViewData["Title"] == "Entertainment")
+                            {
+                                <div class="nav-underline-active"></div>
+                            }
+                            else
+                            {
+                                <div class="nav-underline-hidden"></div>
+                            }
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-page="Contact">Contact</a>
+                            @if (@ViewData["Title"] == "Contact")
+                            {
+                                <div class="nav-underline-active"></div>
+                            }
+                            else
+                            {
+                                <div class="nav-underline-hidden"></div>
+                            }
                         </li>
                     </ul>
                 </div>
-                <a asp-page="Menu" asp-route-category="popular" class="btn btn-light">Order Ahead</a>
+                @if (@ViewData["Title"] == "Menu" || @ViewData["Title"] == "Order")
+                {
+                   <img src="~/Content/shoppingcart.png" height="50px"/>
+                }
+                else
+                {
+                    <a asp-page="Menu" asp-route-category="popular" class="btn">Order Ahead</a>
+                }
             </div>
         </nav>
     </header>
@@ -45,60 +94,59 @@
         </main>
     </div>
 
-    <footer class="footer text-light pt-3 pb-3">
-        <div class="container-fluid align-items-center">
-            <div class="row">
-                <div class="col-12 col-sm-6 col-lg-3">
-                    <img src="~/Content/cozybeanlogotext.png" alt="Cozy Bean" id="footer-logo" />
-                </div>
-                <div class="col-12 col-sm-6 col-lg-3">
-                    <h2>About</h2>
-                    <p>Are you a coffee lover, open to new tastes? A tired student who just got off class and wants to take a cozy break? Or do you just want to look for a cozy place where you can meet your friends and spend pleasant moments on cold winter days? Cozy Bean Cafe is the place for you. We’re happy to offer you this unique cozy environment where you can feel welcomed and happy with every sip. We’re more than just a place, we’re Cozy Bean Cafe.</p>
-                </div>
-                <div class="col-12 col-sm-6 col-lg-3">
-                    <h2>Hours of Operation</h2>
-                    <table id="schedule-table">
-                        <tr>
-                            <td>Monday</td>
-                            <td>9:00am - 8:00pm</td>
-                        </tr>
-                        <tr>
-                            <td>Tuesday</td>
-                            <td>9:00am - 8:00pm</td>
-                        </tr>
-                        <tr>
-                            <td>Wednesday</td>
-                            <td>9:00am - 8:00pm</td>
-                        </tr>
-                        <tr>
-                            <td>Thursday</td>
-                            <td>9:00am - 8:00pm</td>
-                        </tr>
-                        <tr>
-                            <td>Friday</td>
-                            <td>9:00am - 8:00pm</td>
-                        </tr>
-                        <tr>
-                            <td>Saturday</td>
-                            <td>8:00am - 10:00pm</td>
-                        </tr>
-                        <tr>
-                            <td>Sunday</td>
-                            <td>8:00am - 10:00pm</td>
-                        </tr>
-                    </table>
-                </div>
-                <div class="col-12 col-sm-6 col-lg-3">
-                    <h2>Contact Us</h2>
-                    <p>contact@cozybean.com</p>
-                    <p><a href="tel:+1416-123-4567" class="phone">416-123-4567</a></p>
-                    <p>1234 Example Street</p>
-                    <ul class="socialmedia">
-                        <li><a href="#"><img src="~/Content/2021_Facebook_icon.png" class="social-icon" /></a></li>
-                        <li><a href="#"><img src="~/Content/instagram-colourful-icon.png" class="social-icon" /></a></li>
-                        <li><a href="#"><img src="~/Content/twittericon.png" class="social-icon" /></a></li>
-                    </ul>
-                </div>
+    <footer class="footer container-fluid align-items-center text-light pt-3 pb-3 mr-0">
+        <div class="row">
+            <div class="col-12 col-sm-6 col-lg-3">
+                <a class="text-white" asp-page="Index"><img src="~/Content/cozybeanlogotext.png" alt="Cozy Bean" id="footer-logo" /></a>
+            </div>
+            <div class="col-12 col-sm-6 col-lg-3">
+                <a class="text-white" asp-page="About"><h2>About</h2></a>
+                <p>Are you a coffee lover, open to new tastes? A tired student who just got off class and wants to take a cozy break? Or do you just want to look for a cozy place where you can meet your friends and spend pleasant moments on cold winter days? Cozy Bean Cafe is the place for you. We’re happy to offer you this unique cozy environment where you can feel welcomed and happy with every sip. We’re more than just a place, we’re Cozy Bean Cafe.</p>
+            </div>
+            <div class="col-12 col-sm-6 col-lg-3">
+                <a class="text-white" asp-page="Location"><h2>Hours of Operation</h2></a>
+                <table id="schedule-table">
+                    <tr>
+                        <td>Monday</td>
+                        <td>9:00am - 8:00pm</td>
+                    </tr>
+                    <tr>
+                        <td>Tuesday</td>
+                        <td>9:00am - 8:00pm</td>
+                    </tr>
+                    <tr>
+                        <td>Wednesday</td>
+                        <td>9:00am - 8:00pm</td>
+                    </tr>
+                    <tr>
+                        <td>Thursday</td>
+                        <td>9:00am - 8:00pm</td>
+                    </tr>
+                    <tr>
+                        <td>Friday</td>
+                        <td>9:00am - 8:00pm</td>
+                    </tr>
+                    <tr>
+                        <td>Saturday</td>
+                        <td>8:00am - 10:00pm</td>
+                    </tr>
+                    <tr>
+                        <td>Sunday</td>
+                        <td>8:00am - 10:00pm</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="col-12 col-sm-6 col-lg-3">
+                <a class="text-white" asp-page="Contact"><h2>Contact Us</h2></a>
+                <p>contact@cozybean.com</p>
+                <p><a href="tel:+1416-123-4567" class="phone text-white">416-123-4567</a></p>
+                <p>1234 Example Street</p>
+                <ul class="socialmedia">
+                    <li><a href="#"><img src="~/Content/facebookicon.png" class="social-icon" /></a></li>
+                    <li><a href="#"><img src="~/Content/instagramicon.png" class="social-icon" /></a></li>
+                    <li><a href="#"><img src="~/Content/twittericon.png" class="social-icon" /></a></li>
+                    <li><a href="#"><img src="~/Content/tiktokicon.png" class="social-icon" /></a></li>
+                </ul>
             </div>
         </div>
     </footer>

@@ -1,7 +1,7 @@
 ﻿@page
 @model IndexModel
 @{
-    ViewData["Title"] = "Home page";
+    ViewData["Title"] = "Home";
 }
 <div class="container-fluid p-0">
     <div class="row p-0">
@@ -109,14 +109,19 @@
         </div>
     </div>
     <div class="row p-0">
-        <div class="col-12 col-sm-4 p-0">
-            <img src="~/Content/drinks.png" class="image-fit" />
+        <div class="col-12 col-sm-4 p-0 reveal-panel">
+            <img src="~/Content/drinks.png" class="image-fit image-back" />
+            <img src="~/Content/cartoondrink.png" class="image-fit image-front" />
+
         </div>
-        <div class="col-12 col-sm-4 p-0">
-            <img src="~/Content/food.png" class="image-fit" />
+        <div class="col-12 col-sm-4 p-0 reveal-panel">
+            <img src="~/Content/food.png" class="image-fit image-back" />
+            <img src="~/Content/cartoonfood.png" class="image-fit image-front" />
+
         </div>
-        <div class="col-12 col-sm-4 p-0">
-            <img src="~/Content/meals.png" class="image-fit" />
+        <div class="col-12 col-sm-4 p-0 reveal-panel">
+            <img src="~/Content/meals.png" class="image-fit image-back" />
+            <img src="~/Content/cartoonmeal.png" class="image-fit image-front" />
         </div>
     </div>
 </div>
