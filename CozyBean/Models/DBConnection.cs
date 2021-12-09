@@ -6,18 +6,18 @@ namespace CozyBean.Models
 {
     public class DBConnection
     {
-        private static string User { get { return "root"; } }
-        private static string Password { get { return "root"; } }
+        private static string User { get { return "azure"; } }
+        private static string Password { get { return "6#vWHD_$"; } }
         private static string Database { get { return "cozybean"; } }
-        private static string Server { get { return "localhost"; } }
-        private static string Port { get { return "8889"; } }
+        private static string Server { get { return "127.0.0.1"; } }
+        private static string Port { get { return "55401"; } }
 
         protected static string ConnectionString
         {
             get
             {
                 //Concatonating connnection string values into a single line with proper formating
-                return "server = " + Server
+                return "Data Source = " + Server
                 + "; user = " + User
                 + "; database = " + Database
                 + "; port = " + Port

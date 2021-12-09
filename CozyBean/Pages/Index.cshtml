@@ -103,7 +103,7 @@
             <p>
                 Enjoy your holiday with one of our baristas's hand-crafted cafes-Cozy Bean Caramel Oat Latte
             </p>
-            <a asp-page="Menu" class="btn btn-light mt-5">Menu</a>
+            <a asp-page="Menu" asp-route-category="popular" class="btn btn-light mt-5">Menu</a>
         </div>
         <div class="col-12 col-lg-5 p-0">
             <img src="~/Content/holidaycoffee.png" class="image-fit" />
@@ -111,7 +111,7 @@
     </div>
     <div class="row p-0">
         <div class="col-12 col-lg-4 p-0 reveal-panel">
-            <a asp-page="Menu">
+            <a asp-page="Menu" asp-route-category="popular">
                 <img src="~/Content/drinks.png" class="image-fit image-back" />
             </a>
             <a asp-page="Menu">
@@ -120,10 +120,10 @@
             <h2 class="panel-label">Popular Drinks</h2>
         </div>
         <div class="col-12 col-lg-4 p-0 reveal-panel">
-            <a asp-page="Menu">
+            <a asp-page="Menu" asp-route-category="popular">
                 <img src="~/Content/food.png" class="image-fit image-back" />
             </a>
-            <a asp-page="Menu">
+            <a asp-page="Menu" asp-route-category="popular">
                 <img src="~/Content/cartoonfood.png" class="image-fit image-front" />
             </a>
             <h2 class="panel-label">Popular Foods</h2>
