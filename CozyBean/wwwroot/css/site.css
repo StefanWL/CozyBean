@@ -1,7 +1,7 @@
 ﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
 for details on configuring this project to bundle and minify static web assets. */
-@import url('https://fonts.googleapis.com/css2?family=family=Montserrat:wght@400;600');
-@import url("https://p.typekit.net/p.css?s=1&k=tig5ggp&ht=tk&f=46211&a=92478119&app=typekit&e=css");
+/*@import url('https://fonts.googleapis.com/css2?family=family=Montserrat:wght@400;600');
+@import url("https://p.typekit.net/p.css?s=1&k=tig5ggp&ht=tk&f=46211&a=92478119&app=typekit&e=css");*/
 
 @font-face {
     font-family: "swear-display";
@@ -103,7 +103,6 @@ a:hover{
 .menu-button{
     color:black;
 }
-
 
 .btn {
     color: black;
@@ -248,6 +247,39 @@ button.accept-policy {
     padding-bottom: 5%;
 }
 
+#order-image {
+    border: solid white 2px;
+}
+
+.customization-option {
+    background-color: #242424;
+    border-radius: 1em;
+    font-size: 1.5em;
+    padding: 0.5em;
+    color: white;
+    margin-top: 1em;
+}
+
+#order-summary-border {
+    border: solid #242424 2px;
+    border-radius: 1em;
+    padding: 10%;
+    margin: 10%;
+    margin-top: 30%;
+}
+
+#order-summary {
+    font-size: 1.5em;
+    margin-bottom: 2em;
+}
+
+#checkout-button {
+    background-color: #242424;
+    font-size: 1.5em;
+    border-radius: 1em;
+    border: none;
+    color: white;
+}
 
 /* Sticky footer styles
 -------------------------------------------------- */

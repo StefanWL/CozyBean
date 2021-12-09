@@ -26,10 +26,6 @@ namespace CozyBean.Pages
             {
                 cmd.CommandText = "Select * from Menu order by sales desc limit 6";
             }
-            else if (category == "favourite")
-            {
-
-            }
             else
             {
                 cmd.CommandText = "Select * from Menu where lower(category) like lower(@key)";
