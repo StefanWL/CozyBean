@@ -81,11 +81,11 @@
                 </div>
                 @if (@ViewData["Title"] == "Menu" || @ViewData["Title"] == "Order")
                 {
-                    <img src="~/Content/shoppingcart.png" height="50px" />
+                    <img id="shopping-bag" src="~/Content/shoppingcart.png" height="50px" />
                 }
                 else
                 {
-                    <a asp-page="Menu" asp-route-category="popular" class="btn">Order Ahead</a>
+                    <a id="order-ahead" asp-page="Menu" asp-route-category="popular" class="btn mb-4">Order Ahead</a>
                 }
             </div>
         </nav>
@@ -110,31 +110,31 @@
                 <table id="schedule-table">
                     <tr>
                         <td>Monday</td>
-                        <td>9:00am - 8:00pm</td>
+                        <td>9:00am - 10:00pm</td>
                     </tr>
                     <tr>
                         <td>Tuesday</td>
-                        <td>9:00am - 8:00pm</td>
+                        <td>9:00am - 10:00pm</td>
                     </tr>
                     <tr>
                         <td>Wednesday</td>
-                        <td>9:00am - 8:00pm</td>
+                        <td>9:00am - 10:00pm</td>
                     </tr>
                     <tr>
                         <td>Thursday</td>
-                        <td>9:00am - 8:00pm</td>
+                        <td>9:00am - 10:00pm</td>
                     </tr>
                     <tr>
                         <td>Friday</td>
-                        <td>9:00am - 8:00pm</td>
+                        <td>9:00am - 10:00pm</td>
                     </tr>
                     <tr>
                         <td>Saturday</td>
-                        <td>8:00am - 10:00pm</td>
+                        <td>9:00am - 10:00pm</td>
                     </tr>
                     <tr>
                         <td>Sunday</td>
-                        <td>8:00am - 10:00pm</td>
+                        <td>9:00am - 10:00pm</td>
                     </tr>
                 </table>
             </div>
@@ -142,7 +142,7 @@
                 <a class="text-white" asp-page="Contact"><h2>Contact Us</h2></a>
                 <p>contact@cozybean.com</p>
                 <p><a href="tel:+1416-123-4567" class="phone text-white">416-123-4567</a></p>
-                <p>1234 Example Street</p>
+                <p>655 Queen Street W</p>
                 <ul class="socialmedia">
                     <li><a href="#"><img src="~/Content/facebookicon.png" class="social-icon" /></a></li>
                     <li><a href="#"><img src="~/Content/instagramicon.png" class="social-icon" /></a></li>

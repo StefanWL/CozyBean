@@ -12,11 +12,10 @@ for details on configuring this project to bundle and minify static web assets. 
 }
 
 body {
-    font: normal 1.1em/1.2 'Montserrat',sans-serif;
+    font: normal 1.1em/1.2 'Gotham',sans-serif;
     font-weight: 400;
     margin: 0;
     color: black;
-    margin-bottom: 60px;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -143,7 +142,6 @@ a:hover{
 }
 
 .nav-underline-active {
-    margin-top: 1em;
     width: 100%;
     height: 2px;
     background-color: black;
@@ -155,6 +153,11 @@ a:hover{
     background-color: black;
 }
 
+.nav-link{
+    font-size: 1.5em;
+    padding-bottom:0;
+}
+
 .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
     color: #fff;
     background-color: #1b6ec2;
@@ -162,9 +165,14 @@ a:hover{
 }
 
 .image-fit {
-    height: 100%;
     width: 100%;
 }
+
+.map-fit {
+    width: 100%;
+    height:100%
+}
+
 .image-back {
     position: absolute;
     left: 0;
@@ -300,3 +308,25 @@ html {
 }
 
 
+@media only screen and (max-width: 768px) {
+    #order-ahead {
+        position: absolute;
+        left: 6.5em;
+        top: 2em;
+    }
+
+    #shopping-bag {
+        position: absolute;
+        left: 6.5em;
+        top: 2em;
+    }
+    .nav-item{
+        width: 40%
+    }
+    .map-fit {
+        height: 400px
+    }
+    .schedule-bean{
+        display:none;
+    }
+}
