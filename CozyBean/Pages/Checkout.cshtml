@@ -3,11 +3,17 @@
 @{
     ViewData["Title"] = "Checkout";
 }
-<div class="container">
+<div class="container" id="order-container">
 
 </div>
 <div class="container">
-    <table id="price-summary">
-    </table>
-    <a href="#" class="button" id="finalize-order">Order</a>
+    <div class="row justify-content-center pt-5 pb-5">
+        <div class="col-4">
+            <table id="price-summary">
+            </table>
+        </div>
+        <div class="col-4">
+            <button href="#" class="w-100 p-3" id="finalize-order">Place Order</button>
+        </div>
+    </div>
 </div>

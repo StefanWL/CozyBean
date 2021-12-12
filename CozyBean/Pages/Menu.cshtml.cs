@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using CozyBean.Models;
-using MySql.Data.MySqlClient;
+using Microsoft.Data.SqlClient;
 
 
 namespace CozyBean.Pages
@@ -14,27 +14,33 @@ namespace CozyBean.Pages
     {
         public List<MenuItem> menuItems = new List<MenuItem> { };
 
+        public string categoryString;
+
+        public string menuString;
+
         private DBConnection CozyBean = new DBConnection();
-        public void OnGet(string category)
+        public void OnGet(string menu, string category)
         {
 
-            MySqlConnection Conn = CozyBean.AccessDatabase();
+            SqlConnection Conn = CozyBean.AccessDatabase();
             Conn.Open();
-            MySqlCommand cmd = Conn.CreateCommand();
 
-            if (category == "popular")
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = Conn;
+            cmd.CommandType = System.Data.CommandType.Text;
+
+
+            if (category == "Popular")
             {
-                cmd.CommandText = "Select * from Menu order by sales desc limit 6";
+                cmd.CommandText = $"SELECT TOP 6 * FROM Menu WHERE Menu = '{menu}' ORDER BY sales DESC";
             }
             else
             {
-                cmd.CommandText = "Select * from Menu where lower(category) like lower(@key)";
-                cmd.Parameters.AddWithValue("@key", category);
+                cmd.CommandText = $"SELECT * FROM Menu WHERE Category = '{category}'";
             }
-            
-            cmd.Prepare();
 
-            MySqlDataReader ResultSet = cmd.ExecuteReader();
+
+            SqlDataReader ResultSet = cmd.ExecuteReader();
 
             while (ResultSet.Read())
             {
@@ -72,6 +78,8 @@ namespace CozyBean.Pages
 
             Conn.Close();
 
+            categoryString = category.Replace("_", " ");
+            menuString = menu.ToLower();
         }
     }
 }

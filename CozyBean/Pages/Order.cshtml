@@ -6,7 +6,8 @@
 
 <div class="container-fluid">
     <div id="order-top" class="row justify-content-center">
-        <div class="col-12 col-sm-4">
+
+        <div id="image-container" class="col-12 col-sm-4">
             <img src=@Model.Item.ImageURL id="order-image" class="image-fit" />
         </div>
         <div class="col-12 col-sm-4">
@@ -113,12 +114,20 @@
                     </tr>
                     <tr id="price-row">
                         <td id="price-label">Price</td>
-                        <td id="price-amount">@Model.Item.Price</td>
+                        <td id="price-amount">$@Model.Item.Price</td>
                     </tr>
                 </table>
-                <a asp-page="Menu" asp-route-category="popular" class="w-100 p-3" id="checkout-button">Add to Order</a>
+                <button class="w-100 p-3" id="checkout-button">Add to Order</button>
             </div>
         </div>
     </div>
 </div>
- 
+
+<div id="order-popout">
+    <div class="row" id="order">
+
+    </div>
+    <div class="row">
+        <button href="#" class="w-100 p-3" id="cart-button">Place Order</button>
+    </div>
+</div> 

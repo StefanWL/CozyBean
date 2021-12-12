@@ -1,7 +1,6 @@
 ﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
 for details on configuring this project to bundle and minify static web assets. */
-/*@import url('https://fonts.googleapis.com/css2?family=family=Montserrat:wght@400;600');
-@import url("https://p.typekit.net/p.css?s=1&k=tig5ggp&ht=tk&f=46211&a=92478119&app=typekit&e=css");*/
+@import url("https://p.typekit.net/p.css?s=1&k=tig5ggp&ht=tk&f=46211&a=92478119&app=typekit&e=css");
 
 @font-face {
     font-family: "swear-display";
@@ -12,11 +11,10 @@ for details on configuring this project to bundle and minify static web assets. 
 }
 
 body {
-    font: normal 1.1em/1.2 'Montserrat',sans-serif;
+    font: normal 1.1em/1.2 'Montserrat', sans-serif;
     font-weight: 400;
     margin: 0;
     color: black;
-    margin-bottom: 60px;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -66,7 +64,7 @@ a:hover{
 #menu-contents ul {
     list-style-type: none;
 }
-#menu-dropdown{
+#drink-menu-dropdown{
     display:none;
 }
 
@@ -143,7 +141,6 @@ a:hover{
 }
 
 .nav-underline-active {
-    margin-top: 1em;
     width: 100%;
     height: 2px;
     background-color: black;
@@ -155,6 +152,12 @@ a:hover{
     background-color: black;
 }
 
+.nav-link{
+    font-size: 1.2em;
+    padding-bottom:0;
+    margin-right:1em;
+}
+
 .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
     color: #fff;
     background-color: #1b6ec2;
@@ -162,9 +165,14 @@ a:hover{
 }
 
 .image-fit {
-    height: 100%;
     width: 100%;
 }
+
+.map-fit {
+    width: 100%;
+    height:100%
+}
+
 .image-back {
     position: absolute;
     left: 0;
@@ -202,6 +210,7 @@ a:hover{
     background-color: #f2eeeb
 
 }
+
 
 /* Sticky footer styles
 -------------------------------------------------- */
@@ -281,6 +290,43 @@ button.accept-policy {
     color: white;
 }
 
+#cart-button {
+    background-color: #242424;
+    font-size: 1.5em;
+    border-radius: 1em;
+    border: none;
+    color: white;
+}
+
+#finalize-order {
+    background-color: #242424;
+    font-size: 1.5em;
+    border-radius: 1em;
+    border: none;
+    color: white;
+}
+
+.quantity-label {
+    font-family: 'Swear-display';
+    font-size: 1.5em;
+}
+
+.item-quantity {
+    font-size: 1.5em;
+    border-radius: 0.5em;
+    width: 10%
+}
+
+#order-popout {
+    display: none;
+    width: 20%;
+    position: absolute;
+    right: 0;
+    top: 100px;
+    background-color: white;
+    border: solid #242424 2px;
+    padding: 1em;
+}
 /* Sticky footer styles
 -------------------------------------------------- */
 html {
@@ -295,8 +341,30 @@ html {
 }
 
 #footer-logo{
-    width: 80%;
-    margin-left: 10%;
+    width: 60%;
+    margin-left: 20%;
 }
 
 
+@media only screen and (max-width: 768px) {
+    #order-ahead {
+        position: absolute;
+        left: 6.5em;
+        top: 2em;
+    }
+
+    #shopping-bag {
+        position: absolute;
+        left: 6.5em;
+        top: 2em;
+    }
+    .nav-item{
+        width: 40%
+    }
+    .map-fit {
+        height: 400px
+    }
+    .schedule-bean{
+        display:none;
+    }
+}

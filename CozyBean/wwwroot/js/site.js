@@ -1,4 +1,93 @@
 ﻿$(document).ready(() => {
+    let order = sessionStorage.getItem("order")
+    let orderArray = []
+
+    if (order != null) {
+        orderArray = order.split(";")
+    }
+
+    // checkout
+
+    if (document.title === "Checkout - CozyBean") {
+
+        const orderArray = order.split(";")
+
+        const orderContainer = document.getElementById("order-container")
+
+        const priceSummary = document.getElementById("price-summary")
+
+        let orderHTML = ""
+        let priceHTML = ""
+        let total = 0
+
+        for (i = 1; i < orderArray.length; i++) {
+            const itemString = orderArray[i]
+            const itemArray = itemString.split(",")
+
+            let sizeString = ""
+            let milkString = ""
+            let sugarString = ""
+            let warmString = ""
+
+
+            if (itemArray[1] != "undefined") {
+                sizeString = "<p>Size: " + itemArray[1] + "</p>"
+            }
+            if (itemArray[2] != "undefined") {
+                milkString = "<p>Milk: " + itemArray[2] + "</p>"
+            }
+            if (itemArray[3] != "undefined") {
+                sugarString = "<p>Sugar: " + itemArray[3] + "</p>"
+            }
+            if (itemArray[4] != "undefined") {
+                warmString = "<p>Warm: " + itemArray[4] + "</p>"
+            }
+
+            orderHTML = orderHTML +
+                `<div class="row pt-5 pb-5">` +
+                    '<div class="col-5 col-sm-2">' +
+                        `${itemArray[7]}` +
+                    '</div>' +
+                    '<div class="col-7 col-sm-4">' +
+                        `<h3>${itemArray[0]}</h3>` +
+                        sizeString + milkString + sugarString + warmString +
+                    '</div>' +
+                    '<div class="col-0 col-sm-6">' +
+                        `<input class="item-quantity float-right" type="number" name="quantity-${i}" value="1">` +
+                        `<label class="quantity-label float-right" for="quantity-${i}">Quantity: </label>` +
+                    '</div>' +
+                '</div>'
+   
+
+            priceHTML = priceHTML +
+                '<tr>' +
+                `<td>${itemArray[0]}</td>` +
+                `<td>$${itemArray[6]}</td>` +
+                '</tr>'
+
+            total += Number(itemArray[6])
+        }
+
+        priceHTML = priceHTML +
+            '<tr>' +
+            '<td>Total</td>' +
+            `<td>$${total}</td>` +
+            '</tr>'
+
+
+        orderContainer.innerHTML = orderHTML
+        priceSummary.innerHTML = priceHTML
+
+        const orderButton = document.getElementById("finalize-order")
+        orderButton.addEventListener("click", (event) => { event.preventDefault() })
+
+        const finalizeOrder = () => {
+            sessionStorage.clear()
+            location.reload()
+        }
+
+        orderButton.onclick = finalizeOrder
+    }
 
     // interactions
     $('.nav-link').on('mouseenter', (event) => {
@@ -141,16 +230,17 @@
     }
 
     const addToOrder =  () => {
-        let order = sessionStorage.getItem("order")
-        const orderString = `${$('#item-name').html()},${$('#drink-size').html()},${$('#milk-type').html()},${$('#sugar-amount').html()},${$('#warm-amount').html()}`
+        const orderString = `${$('#item-name').html()},${$('#drink-size').html()},${$('#milk-type').html()},${$('#sugar-amount').html()},${$('#warm-amount').html()},${$('#calories-amount').html()},${$('#price-amount').html().substring(1)},${ $('#image-container').html()}`
         console.log(orderString)
         if (sessionStorage === null) {
             order = orderString
         } else {
-            order = order + ";" + orderStringe
+            order = order + ";" + orderString
         }
-        console.log(order)
+
         sessionStorage.setItem("order", order)
+
+        window.location.href = "../../menu/Drinks/Popular"
     }
     $('#checkout-button').on('click', addToOrder)
     $('#size-dropdown').on('change', () => {
@@ -173,7 +263,62 @@
         document.getElementById("warm-amount").innerHTML = document.getElementById("warm-dropdown").value
     })
 
-    //menu ajax
+
+    $('#shopping-bag').on('click', () => {
+        let orderArray = []
+
+        if (order != null) {
+            orderArray = order.split(";")
+        }
 
 
+        const orderContainer = document.getElementById("order")
+
+        const priceSummary = document.getElementById("price-summary")
+
+        let orderHTML = ""
+        for (i = 1; i < orderArray.length; i++) {
+            const itemString = orderArray[i]
+            const itemArray = itemString.split(",")
+
+            let sizeString = ""
+            let milkString = ""
+            let sugarString = ""
+            let warmString = ""
+
+
+            if (itemArray[1] != "undefined") {
+                sizeString = "Size: " + itemArray[1] + "<br>"
+            }
+            if (itemArray[2] != "undefined") {
+                milkString = "Milk: " + itemArray[2] + "<br>"
+            }
+            if (itemArray[3] != "undefined") {
+                sugarString = "Sugar: " + itemArray[3] + "<br>"
+            }
+            if (itemArray[4] != "undefined") {
+                warmString = "Warm: " + itemArray[4] + "<br>"
+            }
+
+            orderHTML = orderHTML +
+                `<div class="row pt-3 pb-3">` +
+                    '<div class="col-4">' +
+                        `${itemArray[7]}` +
+                    '</div>' +
+                    '<div class="col-8">' +
+                        `<h4>${itemArray[0]}</h4>` +
+                        '<p>' + sizeString + milkString + sugarString + warmString + '</p>' +
+                    '</div>' +
+                '</div>'
+        }
+        orderContainer.innerHTML = orderHTML
+    })
+
+    $('#shopping-bag').on('click', () => {
+        $('#order-popout').slideToggle(300)
+    })
+
+    $('#cart-button').on('click', () => {
+        window.location.href = '/checkout'
+    })
 })

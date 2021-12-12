@@ -1,5 +1,5 @@
 ﻿using System;
-using MySql.Data.MySqlClient;
+using Microsoft.Data.SqlClient;
 
 
 namespace CozyBean.Models
@@ -17,18 +17,17 @@ namespace CozyBean.Models
             get
             {
                 //Concatonating connnection string values into a single line with proper formating
-                return "Data Source = " + Server
-                + "; user = " + User
-                + "; database = " + Database
-                + "; port = " + Port
-                + "; password = " + Password;
+                return "Server=tcp:cozybean.database.windows.net,1433;" +
+                "Database=menu;User ID=stefanwhittakerlee;" +
+                "Password=CXZfmpq7;Encrypt=True;" +
+                "TrustServerCertificate=False;Connection Timeout=30;";
             }
         }
 
-        public MySqlConnection AccessDatabase()
+        public SqlConnection AccessDatabase()
         {
             //Accessing Database with connection string
-            return new MySqlConnection(ConnectionString);
+            return new SqlConnection("Server = tcp:cozybean.database.windows.net, 1433; Initial Catalog = cozybean; Persist Security Info = False; User ID = stefanwhittakerlee; Password = CXZfmpq7; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30;");
         }
 
     }
