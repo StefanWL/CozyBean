@@ -30,12 +30,12 @@
             <h2>Drink Types</h2>
             <ul>
                 <li><a class="menu-button" asp-page="Menu" asp-route-category="popular" id="popular-drinks-button">Popular</a></li>
-                <li><a class="menu-button" asp-page="Menu" asp-route-category="hot_coffee" id="hot-coffee-button">Hot Coffee</a></li>
-                <li><a class="menu-button" asp-page="Menu" asp-route-category="hot_tea" id="hot-tea-button">Hot Tea</a></li>
-                <li><a class="menu-button" asp-page="Menu" asp-route-category="hot_drinks" id="hot-drinks-button">Other Hot Drinks</a></li>
-                <li><a class="menu-button" asp-page="Menu" asp-route-category="cold_coffee" id="cold-coffee-button">Cold Coffee</a></li>
-                <li><a class="menu-button" asp-page="Menu" asp-route-category="cold_tea" id="cold-tea-button">Cold Tea</a></li>
-                <li><a class="menu-button" asp-page="Menu" asp-route-category="cold_drinks" id="cold-drinks-button">Other Cold Drinks</a></li>
+                <li><a class="menu-button" asp-page="Menu" asp-route-category="Hot_Coffee" id="hot-coffee-button">Hot Coffee</a></li>
+                <li><a class="menu-button" asp-page="Menu" asp-route-category="Hot_Tea" id="hot-tea-button">Hot Tea</a></li>
+                <li><a class="menu-button" asp-page="Menu" asp-route-category="Hot_Drinks" id="hot-drinks-button">Other Hot Drinks</a></li>
+                <li><a class="menu-button" asp-page="Menu" asp-route-category="Cold_Coffee" id="cold-coffee-button">Cold Coffee</a></li>
+                <li><a class="menu-button" asp-page="Menu" asp-route-category="Cold_Tea" id="cold-tea-button">Cold Tea</a></li>
+                <li><a class="menu-button" asp-page="Menu" asp-route-category="Cold_Drinks" id="cold-drinks-button">Other Cold Drinks</a></li>
             </ul>
         </div>
     </div>
@@ -46,17 +46,24 @@
         <div class="row">
             @foreach (var item in Model.menuItems)
             {
-            <div class="col-3 card">
-                <div class="card-img-top">
-                    <a asp-page="Order" asp-route-id=@item.ID><img src=@item.ImageURL class="menu-item-image" /></a>
+                <div class="col-3 card">
+                    <div class="card-img-top">
+                        <a asp-page="Order" asp-route-id=@item.ID><img src=@item.ImageURL class="menu-item-image" /></a>
+                    </div>
+                    <div class="card-text-bottom">
+                        <h3><a asp-page="Order" asp-route-id=@item.ID>@item.Name</a></h3>
+                        <p>@item.Description</p>
+                    </div>
                 </div>
-                <div class="card-text-bottom">
-                    <h3><a asp-page="Order" asp-route-id=@item.ID>@item.Name</a></h3>
-                    <p>@item.Description</p>
-                </div>
-            </div>
-
             }
         </div>
-    </div>       
+    </div>
 </div>
+<div id="order-popout">
+    <div class="row" id="order">
+
+    </div>
+    <div class="row">
+        <button href="https://cozybean.azurewebsites.net/checkout" class="w-100 p-3" id="finalize-order">Place Order</button>
+    </div>
+</div> 

@@ -211,6 +211,7 @@ a:hover{
 
 }
 
+
 /* Sticky footer styles
 -------------------------------------------------- */
 html {
@@ -289,6 +290,35 @@ button.accept-policy {
     color: white;
 }
 
+#finalize-order {
+    background-color: #242424;
+    font-size: 1.5em;
+    border-radius: 1em;
+    border: none;
+    color: white;
+}
+
+.quantity-label {
+    font-family: 'Swear-display';
+    font-size: 1.5em;
+}
+
+.item-quantity {
+    font-size: 1.5em;
+    border-radius: 0.5em;
+    width: 10%
+}
+
+#order-popout {
+    display: none;
+    width: 20%;
+    position: absolute;
+    right: 0;
+    top: 100px;
+    background-color: white;
+    border: solid #242424 2px;
+    padding: 1em;
+}
 /* Sticky footer styles
 -------------------------------------------------- */
 html {
