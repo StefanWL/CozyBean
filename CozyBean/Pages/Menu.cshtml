@@ -1,22 +1,23 @@
-﻿@page "/Menu/{category}"
+﻿@page "/Menu/{menu}/{category}"
 @model CozyBean.Pages.MenuModel
 @{
     ViewData["Title"] = "Menu";
 }
 <div class="row">
     <div class="col-4"></div>
-    <div class="col-4 food-menu">
+    <div class="col-4 food-menu mb-5">
         <div class="container">
             <div class="row">
-                <div class="col-4 text-center"><a href="drinkmenu.html" class="button menu-option">Drinks</a></div>
-                <div class="col-4 text-center"><a href="foodmenu.html" class="button menu-option">Food</a></div>
-                <div class="col-4 text-center"><a href="mealmenu.html" class="button menu-option">Meals</a></div>
+                <div class="col-4 text-center"><a asp-page="Menu" asp-route-menu="Drinks" asp-route-category="Popular" class="button menu-option">Drinks</a></div>
+                <div class="col-4 text-center"><a asp-page="Menu" asp-route-menu="Food" asp-route-category="Popular" class="button menu-option">Food</a></div>
+                <div class="col-4 text-center"><a asp-page="Menu" asp-route-menu="Meals" asp-route-category="Popular" class="button menu-option">Meals</a></div>
             </div>
         </div>
     </div>
     <div class="col-4"></div>
 </div>
-<select name="menu-dropdown" id="menu-dropdown">
+<select name="drink-menu-dropdown" id="drink-menu-dropdown">
+    <option value="popular-container">Popular</option>
     <option value="hot-coffee-container">Hot Coffee</option>
     <option value="hot-tea-container">Hot Tea</option>
     <option value="hot-drinks-container">Other Hot Drinks</option>
@@ -27,21 +28,48 @@
 <div class="row">
     <div class="col-3">
         <div id="menu-contents">
-            <h2>Drink Types</h2>
-            <ul>
-                <li><a class="menu-button" asp-page="Menu" asp-route-category="popular" id="popular-drinks-button">Popular</a></li>
-                <li><a class="menu-button" asp-page="Menu" asp-route-category="Hot_Coffee" id="hot-coffee-button">Hot Coffee</a></li>
-                <li><a class="menu-button" asp-page="Menu" asp-route-category="Hot_Tea" id="hot-tea-button">Hot Tea</a></li>
-                <li><a class="menu-button" asp-page="Menu" asp-route-category="Hot_Drinks" id="hot-drinks-button">Other Hot Drinks</a></li>
-                <li><a class="menu-button" asp-page="Menu" asp-route-category="Cold_Coffee" id="cold-coffee-button">Cold Coffee</a></li>
-                <li><a class="menu-button" asp-page="Menu" asp-route-category="Cold_Tea" id="cold-tea-button">Cold Tea</a></li>
-                <li><a class="menu-button" asp-page="Menu" asp-route-category="Cold_Drinks" id="cold-drinks-button">Other Cold Drinks</a></li>
-            </ul>
+            @if (Model.menuString == "drinks")
+            {
+                <h2>Drink Types</h2>
+                <ul>
+                    <li><a class="menu-button" asp-page="Menu" asp-route-menu="Drinks" asp-route-category="Popular" id="popular-drinks-button">Popular</a></li>
+                    <li><a class="menu-button" asp-page="Menu" asp-route-menu="Drinks" asp-route-category="Hot_Coffee" id="hot-coffee-button">Hot Coffee</a></li>
+                    <li><a class="menu-button" asp-page="Menu" asp-route-menu="Drinks" asp-route-category="Hot_Tea" id="hot-tea-button">Hot Tea</a></li>
+                    <li><a class="menu-button" asp-page="Menu" asp-route-menu="Drinks" asp-route-category="Hot_Drinks" id="hot-drinks-button">Other Hot Drinks</a></li>
+                    <li><a class="menu-button" asp-page="Menu" asp-route-menu="Drinks" asp-route-category="Cold_Coffee" id="cold-coffee-button">Cold Coffee</a></li>
+                    <li><a class="menu-button" asp-page="Menu" asp-route-menu="Drinks" asp-route-category="Cold_Tea" id="cold-tea-button">Cold Tea</a></li>
+                    <li><a class="menu-button" asp-page="Menu" asp-route-menu="Drinks" asp-route-category="Cold_Drinks" id="cold-drinks-button">Other Cold Drinks</a></li>
+                </ul>
+            }
+            @if (Model.menuString == "food")
+            {
+                <h2>Food Types</h2>
+                <ul>
+                    <li><a class="menu-button" asp-page="Menu" asp-route-menu="Food" asp-route-category="Popular" id="popular-food-button">Popular</a></li>
+                    <li><a class="menu-button" asp-page="Menu" asp-route-menu="Food" asp-route-category="Muffins" id="muffins-button">Muffins</a></li>
+                    <li><a class="menu-button" asp-page="Menu" asp-route-menu="Food" asp-route-category="Pastries" id="pastries-button">Pastries</a></li>
+                    <li><a class="menu-button" asp-page="Menu" asp-route-menu="Food" asp-route-category="Cakes" id="cakes-button">Cakes</a></li>
+                    <li><a class="menu-button" asp-page="Menu" asp-route-menu="Food" asp-route-category="Pies" id="pies-button">Pies</a></li>
+                    <li><a class="menu-button" asp-page="Menu" asp-route-menu="Food" asp-route-category="Cookies" id="cookies-button">Cookies</a></li>
+                    <li><a class="menu-button" asp-page="Menu" asp-route-menu="Food" asp-route-category="Snacks" id="snacks-button">Snacks</a></li>
+                </ul>
+            }
+            @if (Model.menuString == "meals")
+            {
+                <h2>Meal Types</h2>
+                <ul>
+                    <li><a class="menu-button" asp-page="Menu" asp-route-menu="Meals" asp-route-category="Popular" id="popular-meals-button">Popular</a></li>
+                    <li><a class="menu-button" asp-page="Menu" asp-route-menu="Meals" asp-route-category="Sandwiches" id="sandwiches-button">Sandwiches</a></li>
+                    <li><a class="menu-button" asp-page="Menu" asp-route-menu="Meals" asp-route-category="Wraps" id="wraps-button">Wraps</a></li>
+                    <li><a class="menu-button" asp-page="Menu" asp-route-menu="Meals" asp-route-category="Soups" id="soups-button">Soups</a></li>
+                    <li><a class="menu-button" asp-page="Menu" asp-route-menu="Meals" asp-route-category="Salads" id="salads-button">Salads</a></li>
+                </ul>
+            }
         </div>
     </div>
     <div class="col-9">
         <div class="row">
-            <h2>Hot Coffee</h2>
+            <h2>@Model.categoryString</h2>
         </div>
         <div class="row">
             @foreach (var item in Model.menuItems)
@@ -64,6 +92,6 @@
 
     </div>
     <div class="row">
-        <button href="https://cozybean.azurewebsites.net/checkout" class="w-100 p-3" id="finalize-order">Place Order</button>
+        <button href="#" class="w-100 p-3" id="cart-button">Place Order</button>
     </div>
 </div> 

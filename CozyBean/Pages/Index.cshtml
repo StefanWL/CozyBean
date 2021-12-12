@@ -60,37 +60,37 @@
                 <tr>
                     <td>Jan 7</td>
                     <td><strong>Men I Trust</strong></td>
-                    <td>8:00pm - 10:00pm</td>
+                    <td>8-10pm</td>
                 </tr>
                 <tr>
                     <td>Jan 14</td>
                     <td><strong>Computer Wife</strong></td>
-                    <td>8:00pm - 10:00pm</td>
+                    <td>8-10pm</td>
                 </tr>
                 <tr>
                     <td>Jan 21</td>
                     <td><strong>Duster</strong></td>
-                    <td>8:00pm - 10:00pm</td>
+                    <td>8-10pm</td>
                 </tr>
                 <tr>
                     <td>Jan 28</td>
                     <td><strong>Horse Jumper of Love</strong></td>
-                    <td>8:00pm - 10:00pm</td>
+                    <td>8-10pm</td>
                 </tr>
                 <tr>
                     <td>Feb 4</td>
                     <td><strong>Yves Tumor</strong></td>
-                    <td>8:00pm - 10:00pm</td>
+                    <td>8-10pm</td>
                 </tr>
                 <tr>
                     <td>Feb 11</td>
                     <td><strong>Alex G</strong></td>
-                    <td>8:00pm - 10:00pm</td>
+                    <td>8-10pm</td>
                 </tr>
                 <tr>
                     <td>Feb 18</td>
                     <td><strong>Dijon</strong></td>
-                    <td>8:00pm - 10:00pm</td>
+                    <td>8-10pm</td>
                 </tr>
             </table>
             <a asp-page="Entertainment" class="btn btn-light mt-5">Learn More</a>
@@ -100,38 +100,38 @@
         <div class="col-12 col-lg-7 padded-text off-white">
             <h2>Try Our New <strong>Holiday Drink</strong></h2>
             <p>
-                Enjoy your holiday with one of our baristas's hand-crafted cafes-Cozy Bean Caramel Oat Latte
+                Enjoy your holiday with one of our baristas's hand-crafted cafes - Cozy Bean Toffee Nut Latte
             </p>
-            <a asp-page="Menu" asp-route-category="popular" class="btn btn-light mt-5">Menu</a>
+            <a asp-page="Menu" asp-route-menu="drinks" asp-route-category="Popular" class="btn btn-light mt-5">Menu</a>
         </div>
         <div class="col-12 col-lg-5 p-0">
-            <img src="~/Content/holidaycoffee.png" class="image-fit" />
+            <img src="~/Content/cold_brew_toffee_nut_latte.jpg" class="image-fit" />
         </div>
     </div>
     <div class="row p-0">
         <div class="col-12 col-lg-4 p-0 reveal-panel">
-            <a asp-page="Menu" asp-route-category="popular">
+            <a asp-page="Menu" asp-route-menu="Drinks" asp-route-category="Popular">
                 <img src="~/Content/drinks.png" class="image-fit image-back" />
             </a>
-            <a asp-page="Menu">
+            <a asp-page="Menu" asp-route-menu="Drinks" asp-route-category="Popular">
                 <img src="~/Content/cartoondrink.png" class="image-fit image-front" />
             </a>
             <h2 class="panel-label">Popular Drinks</h2>
         </div>
         <div class="col-12 col-lg-4 p-0 reveal-panel">
-            <a asp-page="Menu" asp-route-category="popular">
+            <a asp-page="Menu" asp-route-menu="Food" asp-route-category="Popular">
                 <img src="~/Content/food.png" class="image-fit image-back" />
             </a>
-            <a asp-page="Menu" asp-route-category="popular">
+            <a asp-page="Menu" asp-route-menu="Food" asp-route-category="Popular">
                 <img src="~/Content/cartoonfood.png" class="image-fit image-front" />
             </a>
             <h2 class="panel-label">Popular Foods</h2>
         </div>
         <div class="col-12 col-lg-4 p-0 reveal-panel">
-            <a asp-page="Menu">
+            <a asp-page="Menu" asp-route-menu="Meals" asp-route-category="Popular">
                 <img src="~/Content/meals.png" class="image-fit image-back" />
             </a>
-            <a asp-page="Menu">
+            <a asp-page="Menu"  asp-route-menu="Meals" asp-route-category="Popular">
                 <img src="~/Content/cartoonmeal.png" class="image-fit image-front" />
             </a>
             <h2 class="panel-label">Popular Meals</h2>

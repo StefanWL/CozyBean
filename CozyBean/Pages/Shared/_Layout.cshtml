@@ -25,7 +25,7 @@
                     <ul class="navbar-nav flex-grow-1">
 
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-page="Menu" asp-route-category="popular">Menu</a>
+                            <a class="nav-link text-dark" asp-page="Menu" asp-route-menu="Drinks" asp-route-category="Popular">Menu</a>
                             @if (@ViewData["Title"] == "Menu")
                             {
                                 <div class="nav-underline-active"></div>
@@ -87,7 +87,7 @@
                 }
                 else
                 {
-                    <a id="order-ahead" asp-page="Menu" asp-route-category="popular" class="btn mb-4">Order Ahead</a>
+                    <a id="order-ahead" asp-page="Menu" asp-route-menu="Drinks" asp-route-category="Popular" class="btn mb-4">Order Ahead</a>
                 }
             </div>
         </nav>

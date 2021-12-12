@@ -1,8 +1,15 @@
 ﻿$(document).ready(() => {
+    let order = sessionStorage.getItem("order")
+    let orderArray = []
+
+    if (order != null) {
+        orderArray = order.split(";")
+    }
+
     // checkout
+
     if (document.title === "Checkout - CozyBean") {
 
-        const order = sessionStorage.getItem("order")
         const orderArray = order.split(";")
 
         const orderContainer = document.getElementById("order-container")
@@ -81,7 +88,6 @@
 
         orderButton.onclick = finalizeOrder
     }
-
 
     // interactions
     $('.nav-link').on('mouseenter', (event) => {
@@ -224,8 +230,7 @@
     }
 
     const addToOrder =  () => {
-        let order = sessionStorage.getItem("order")
-        const orderString = `${$('#item-name').html()},${$('#drink-size').html()},${$('#milk-type').html()},${$('#sugar-amount').html()},${$('#warm-amount').html()},${$('#calories-amount').html()},${$('#price-amount').html()},${ $('#image-container').html()}`
+        const orderString = `${$('#item-name').html()},${$('#drink-size').html()},${$('#milk-type').html()},${$('#sugar-amount').html()},${$('#warm-amount').html()},${$('#calories-amount').html()},${$('#price-amount').html().substring(1)},${ $('#image-container').html()}`
         console.log(orderString)
         if (sessionStorage === null) {
             order = orderString
@@ -235,7 +240,7 @@
 
         sessionStorage.setItem("order", order)
 
-        window.location.href = "../../menu/popular"
+        window.location.href = "../../menu/Drinks/Popular"
     }
     $('#checkout-button').on('click', addToOrder)
     $('#size-dropdown').on('change', () => {
@@ -260,8 +265,12 @@
 
 
     $('#shopping-bag').on('click', () => {
-        const order = sessionStorage.getItem("order")
-        const orderArray = order.split(";")
+        let orderArray = []
+
+        if (order != null) {
+            orderArray = order.split(";")
+        }
+
 
         const orderContainer = document.getElementById("order")
 
@@ -307,5 +316,9 @@
 
     $('#shopping-bag').on('click', () => {
         $('#order-popout').slideToggle(300)
+    })
+
+    $('#cart-button').on('click', () => {
+        window.location.href = '/checkout'
     })
 })

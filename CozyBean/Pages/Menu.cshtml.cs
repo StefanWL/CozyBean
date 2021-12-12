@@ -14,10 +14,12 @@ namespace CozyBean.Pages
     {
         public List<MenuItem> menuItems = new List<MenuItem> { };
 
-        public string debug;
+        public string categoryString;
+
+        public string menuString;
 
         private DBConnection CozyBean = new DBConnection();
-        public void OnGet(string category)
+        public void OnGet(string menu, string category)
         {
 
             SqlConnection Conn = CozyBean.AccessDatabase();
@@ -28,9 +30,9 @@ namespace CozyBean.Pages
             cmd.CommandType = System.Data.CommandType.Text;
 
 
-            if (category == "popular")
+            if (category == "Popular")
             {
-                cmd.CommandText = "SELECT TOP 6 * FROM Menu ORDER BY sales DESC";
+                cmd.CommandText = $"SELECT TOP 6 * FROM Menu WHERE Menu = '{menu}' ORDER BY sales DESC";
             }
             else
             {
@@ -76,6 +78,8 @@ namespace CozyBean.Pages
 
             Conn.Close();
 
+            categoryString = category.Replace("_", " ");
+            menuString = menu.ToLower();
         }
     }
 }

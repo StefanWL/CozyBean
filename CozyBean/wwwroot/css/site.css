@@ -64,7 +64,7 @@ a:hover{
 #menu-contents ul {
     list-style-type: none;
 }
-#menu-dropdown{
+#drink-menu-dropdown{
     display:none;
 }
 
@@ -155,7 +155,7 @@ a:hover{
 .nav-link{
     font-size: 1.2em;
     padding-bottom:0;
-    margin-left:1em;
+    margin-right:1em;
 }
 
 .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
@@ -283,6 +283,14 @@ button.accept-policy {
 }
 
 #checkout-button {
+    background-color: #242424;
+    font-size: 1.5em;
+    border-radius: 1em;
+    border: none;
+    color: white;
+}
+
+#cart-button {
     background-color: #242424;
     font-size: 1.5em;
     border-radius: 1em;
