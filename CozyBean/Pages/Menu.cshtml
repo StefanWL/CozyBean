@@ -4,8 +4,8 @@
     ViewData["Title"] = "Menu";
 }
 <div class="row">
-    <div class="col-4"></div>
-    <div class="col-4 food-menu mb-5">
+    <div class="col-1 col-sm-3 col-lg-4"></div>
+    <div class="col-10 col-sm-6 col-lg-4 food-menu mb-5">
         <div class="container">
             <div class="row">
                 <div class="col-4 text-center"><a asp-page="Menu" asp-route-menu="Drinks" asp-route-category="Popular" class="button menu-option">Drinks</a></div>
@@ -14,19 +14,183 @@
             </div>
         </div>
     </div>
-    <div class="col-4"></div>
+    <div class="col-1 col-sm-3 col-lg-4"></div>
 </div>
-<select name="drink-menu-dropdown" id="drink-menu-dropdown">
-    <option value="popular-container">Popular</option>
-    <option value="hot-coffee-container">Hot Coffee</option>
-    <option value="hot-tea-container">Hot Tea</option>
-    <option value="hot-drinks-container">Other Hot Drinks</option>
-    <option value="cold-coffee-container">Cold Coffee</option>
-    <option value="cold-tea-container">Cold Tea</option>
-    <option value="cold-drinks-container">Other Cold Drinks</option>
-</select>
 <div class="row">
-    <div class="col-3">
+    <div class="col-1 col-sm-3"></div>
+    <div class="col-10 col-sm-6 mb-5">
+        @if (Model.menuString == "drinks")
+        {
+        <select name="drink-menu-dropdown" id="drink-menu-dropdown" class="menu-dropdown">
+            @if (Model.categoryString == "Popular")
+            {
+                <option selected="selected" value="/Menu/Drinks/Popular">Popular</option>
+            }
+            else
+            {
+                <option value="/Menu/Drinks/Popular">Popular</option>
+            }
+            @if (Model.categoryString == "Hot Coffee")
+            {
+                <option selected="selected" value="/Menu/Drinks/Hot_Coffee">Hot Coffee</option>
+            }
+            else
+            {
+                <option value="/Menu/Drinks/Hot_Coffee">Hot Coffee</option>
+            }
+            @if (Model.categoryString == "Hot Tea")
+            {
+                <option selected="selected" value="/Menu/Drinks/Hot_Tea">Hot Tea</option>
+            }
+            else
+            {
+                <option value="/Menu/Drinks/Hot_Tea">Hot Tea</option>
+            }
+            @if (Model.categoryString == "Hot Drinks")
+            {
+                <option selected="selected" value="/Menu/Drinks/Hot_Drinks">Hot Drinks</option>
+            }
+            else
+            {
+                <option value="/Menu/Drinks/Hot_Drinks">Hot Drinks</option>
+            }
+            @if (Model.categoryString == "Cold Coffee")
+            {
+                <option selected="selected" value="/Menu/Drinks/Cold_Coffee">Cold Coffee</option>
+            }
+            else
+            {
+                <option value="/Menu/Drinks/Cold_Coffee">Cold Coffee</option>
+            }
+            @if (Model.categoryString == "Cold Tea")
+            {
+                <option selected="selected" value="/Menu/Drinks/Cold_Tea">Cold Tea</option>
+            }
+            else
+            {
+                <option value="/Menu/Drinks/Cold_Tea">Cold Tea</option>
+            }
+            @if (Model.categoryString == "Cold Drinks")
+            {
+                <option selected="selected" value="/Menu/Drinks/Cold_Drinks">Cold Drinks</option>
+            }
+            else
+            {
+                <option value="/Menu/Drinks/Cold_Drinks">Cold Drinks</option>
+            }
+        </select>
+        }
+        @if (Model.menuString == "food")
+        {
+        <select name="food-menu-dropdown" id="food-menu-dropdown" class="menu-dropdown">
+            @if (Model.categoryString == "Popular")
+            {
+                <option selected="selected" value="/Menu/Food/Popular">Popular</option>
+            }
+            else
+            {
+                <option value="/Menu/Food/Popular">Popular</option>
+            }
+            @if (Model.categoryString == "Muffins")
+            {
+                <option selected="selected" value="/Menu/Food/Muffins">Muffins</option>
+            }
+            else
+            {
+                <option value="/Menu/Food/Muffins">Muffins</option>
+            }
+            @if (Model.categoryString == "Pastries")
+            {
+                <option selected="selected" value="/Menu/Food/Pastries">Pastries</option>
+            }
+            else
+            {
+                <option value="/Menu/Food/Pastries">Pastries</option>
+            }
+            @if (Model.categoryString == "Cakes")
+            {
+                <option selected="selected" value="/Menu/Food/Cakes">Cakes</option>
+            }
+            else
+            {
+                <option value="/Menu/Food/Cakes">Cakes</option>
+            }
+            @if (Model.categoryString == "Pies")
+            {
+                <option selected="selected" value="/Menu/Food/Pies">Pies</option>
+            }
+            else
+            {
+                <option value="/Menu/Food/Pies">Pies</option>
+            }
+            @if (Model.categoryString == "Cookies")
+            {
+                <option selected="selected" value="/Menu/Food/Cookies">Cookies</option>
+            }
+            else
+            {
+                <option value="/Menu/Food/Cookies">Cookies</option>
+            }
+            @if (Model.categoryString == "Snacks")
+            {
+                <option selected="selected" value="/Menu/Food/Snacks">Snacks</option>
+            }
+            else
+            {
+                <option value="/Menu/Food/Snacks">Snacks</option>
+            }
+        </select>
+        }
+        @if (Model.menuString == "meals")
+        {
+        <select name="meal-menu-dropdown" id="meal-menu-dropdown" class="menu-dropdown">
+            @if (Model.categoryString == "Popular")
+            {
+                <option selected="selected" value="/Menu/Meals/Popular">Popular</option>
+            }
+            else
+            {
+                <option value="/Menu/Meals/Popular">Popular</option>
+            }
+            @if (Model.categoryString == "Sandwiches")
+            {
+                <option selected="selected" value="/Menu/Meals/Sandwiches">Sandwiches</option>
+            }
+            else
+            {
+                <option value="/Menu/Meals/Sandwiches">Sandwiches</option>
+            }
+            @if (Model.categoryString == "Wraps")
+            {
+                <option selected="selected" value="/Menu/Meals/Wraps">Wraps</option>
+            }
+            else
+            {
+                <option value="/Menu/Meals/Wraps">Wraps</option>
+            }
+            @if (Model.categoryString == "Soups")
+            {
+                <option selected="selected" value="/Menu/Meals/Soups">Soups</option>
+            }
+            else
+            {
+                <option value="/Menu/Meals/Soups">Soups</option>
+            }
+            @if (Model.categoryString == "Salads")
+            {
+                <option selected="selected" value="/Menu/Meals/Salads">Salads</option>
+            }
+            else
+            {
+                <option value="/Menu/Meals/Salads">Salads</option>
+            }
+        </select>
+        }
+    </div>
+    <div class="col-1 col-sm-3"></div>
+</div>
+<div class="row">
+    <div class="col-0 col-lg-3">
         <div id="menu-contents">
             @if (Model.menuString == "drinks")
             {
@@ -200,14 +364,14 @@
             }
         </div>
     </div>
-    <div class="col-9">
-        <div class="row">
-            <h2>@Model.categoryString</h2>
+    <div class="col-12 col-lg-9">
+        <div class="row pl-5">
+            <h2 class="ml-5">@Model.categoryString</h2>
         </div>
-        <div class="row">
+        <div class="row justify-content-center p-5">
             @foreach (var item in Model.menuItems)
             {
-            <div class="col-3 card">
+            <div class="col-5 col-sm-3 card">
                 <a asp-page="Order" asp-route-id=@item.ID>
                     <div class="card-img-top">
                         <img src=@item.ImageURL class="menu-item-image" />

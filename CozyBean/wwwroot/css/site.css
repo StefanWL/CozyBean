@@ -68,9 +68,6 @@ a:hover{
 #menu-contents ul {
     list-style-type: none;
 }
-#drink-menu-dropdown{
-    display:none;
-}
 
 .card {
     color: white;
@@ -290,6 +287,8 @@ button.accept-policy {
     padding: 0.5em;
     color: white;
     margin-top: 1em;
+    width: 100%;
+    margin:auto
 }
 
 #image-container {
@@ -307,6 +306,16 @@ button.accept-policy {
 #order-summary {
     font-size: 1.5em;
     margin-bottom: 2em;
+}
+
+#details-list li {
+    display: inline-block;
+    list-style-type: none;
+}
+
+.detail-icon {
+    height:20px;
+    width: 20px;
 }
 
 .cart-image {
@@ -383,7 +392,16 @@ html {
     cursor:pointer;
 }
 
-@media only screen and (max-width: 768px) {
+.menu-dropdown {
+    background-color: #242424;
+    border-radius: 1em;
+    font-size: 1.5em;
+    padding: 0.5em;
+    color: white;
+    width: 100%;
+}
+
+@media only screen and (max-width: 990px) {
     #order-ahead {
         position: absolute;
         left: 6.5em;
@@ -395,6 +413,10 @@ html {
         left: 6.5em;
         top: 2em;
     }
+    .shopping-dot {
+        top: 50px;
+        left: 6em;
+    }
     .nav-item{
         width: 40%
     }
@@ -403,5 +425,21 @@ html {
     }
     .schedule-bean{
         display:none;
+    }
+    #menu-contents {
+        display:none;
+    }
+
+    #order-summary {
+        font-size: 1.2em;
+    }
+    #order-popout {
+        width: 50%;
+        left: 0;
+    }
+}
+@media only screen and (min-width: 990px) {
+    .menu-dropdown {
+        display: none;
     }
 }

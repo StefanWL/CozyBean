@@ -67,7 +67,7 @@
             priceHTML = priceHTML +
                 '<tr>' +
                 `<td>${itemArray[0]}</td>` +
-                `<td>$${itemArray[6]}</td>` +
+                `<td id="quantity-${i}" title="${itemArray[6]}">$${itemArray[6]}</td>` +
                 '</tr>'
 
             total += Number(itemArray[6])
@@ -76,7 +76,7 @@
         priceHTML = priceHTML +
             '<tr class="total-row">' +
             '<td>Total</td>' +
-            `<td>$${total}</td>` +
+            `<td id="total-value">$${total}</td>` +
             '</tr>'
 
 
@@ -93,6 +93,25 @@
 
         orderButton.onclick = finalizeOrder
     }
+
+    $('.item-quantity').on('change', (event) => {
+        const itemNum = $(event.currentTarget).attr('name')
+        let itemQuant = Number($(event.currentTarget).val())
+        console.log(itemQuant)
+
+        const tableRow = document.getElementById(itemNum)
+        const price = Number($(`#${itemNum}`).attr('title'))
+        console.log(price)
+        const subTotal = Number(tableRow.innerHTML.substring(1))
+        console.log(subTotal)
+
+        const grandTotal = document.getElementById("total-value")
+        const priorTotal = Number(grandTotal.innerHTML.substring(1))
+        console.log(priorTotal)
+        grandTotal.innerHTML = "$" + (priorTotal - subTotal + price * itemQuant)
+        tableRow.innerHTML = "$" + (price * itemQuant)
+
+    })
 
     // interactions
     $('.nav-link').on('mouseenter', (event) => {
@@ -341,5 +360,8 @@
 
     $('#cart-button').on('click', () => {
         window.location.href = '/checkout'
+    })
+    $('.menu-dropdown').on('change', (event) => {
+        window.location.href = $(event.currentTarget).find(":selected").val()
     })
 })

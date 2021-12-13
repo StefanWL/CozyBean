@@ -14,21 +14,21 @@
             <h1 id="item-name">@Model.Item.Name</h1>
             <p>@Model.Item.Description</p>
             <ul id="details-list">
+                <li>@Model.Item.Calories Calories</li>
                 @if (@Model.Item.Vegan)
                 {
-                    <li>V</li>
+                    <li><strong>V</strong></li>
                 }
                 @if (@Model.Item.GlutenFree)
                 {
-                    <li>GF</li>
+                    <li><strong>GF</strong></li>
                 }
-                <li>@Model.Item.Calories Calories</li>
             </ul>
         </div>
     </div>
 
     <div class="row justify-content-center">
-        <div class="col-12 col-sm-4 padded-text">
+        <div class="col-12 col-sm-6 col-lg-4 padded-text">
             <h2>Customization</h2>
             @if (@Model.Item.SizeOptions)
             {
@@ -74,7 +74,7 @@
                 </div>
             }
         </div>
-        <div class="col-12 col-sm-4">
+        <div class="col-12 col-sm-6 col-lg-4">
             <div id="order-summary-border">
                 <table id="order-summary">
                     <tr>
