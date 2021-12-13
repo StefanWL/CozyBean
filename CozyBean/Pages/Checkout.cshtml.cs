@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.AspNetCore.Cors;
 
 namespace CozyBean.Pages
 {
@@ -17,9 +18,6 @@ namespace CozyBean.Pages
         public void OnGet()
         {
         }
-        public void OnPost([FromBody] Order order)
-        {
 
-        }
     }
 }

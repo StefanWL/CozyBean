@@ -97,14 +97,10 @@
 
             finalOrder = { "Items": order, "Quantities": quantities}
 
-            $.ajax({
-                url: '',
-                method: 'POST',
-                contentType: 'application/json; charset=utf-8',
-                data: JSON.stringify(finalOrder)
-            })
-            //sessionStorage.clear()
-            //location.reload()
+
+
+            sessionStorage.clear()
+            window.location.href = "/ThankYou"
         }
 
         orderButton.onclick = finalizeOrder
