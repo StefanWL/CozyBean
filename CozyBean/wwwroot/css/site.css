@@ -74,6 +74,8 @@ a:hover{
     border-radius: 1em;
     padding: 0;
     margin: 1em;
+    font-size: 0.8em;
+    transition: background 0.2s ease-in-out;
 }
 .card-img-top {
     height: 0;
@@ -93,6 +95,7 @@ a:hover{
     padding-right: 10%;
     padding-top: 10%;
     padding-bottom: 65%;
+    color: white;
 }
 .card-text-bottom a {
     color: white;
@@ -100,6 +103,15 @@ a:hover{
 
 .menu-button{
     color:black;
+    text-decoration:none;
+}
+
+.menu-button:hover {
+    color: black;
+    text-decoration: underline;
+}
+.active-menu-button {
+    text-decoration: underline;
 }
 
 .btn {
@@ -175,8 +187,8 @@ a:hover{
 
 .image-back {
     position: absolute;
-    left: 0;
-    top: 0;
+    right: 0;
+    bottom: 0;
     display:none
 }
 .panel-label {
@@ -282,28 +294,18 @@ button.accept-policy {
     margin-bottom: 2em;
 }
 
-#checkout-button {
+.dark-button {
     background-color: #242424;
     font-size: 1.5em;
     border-radius: 1em;
-    border: none;
+    border: solid #242424 2px;
     color: white;
+    transition: background 0.1s ease-in-out, color 0.1s ease-in-out;
 }
 
-#cart-button {
-    background-color: #242424;
-    font-size: 1.5em;
-    border-radius: 1em;
-    border: none;
-    color: white;
-}
-
-#finalize-order {
-    background-color: #242424;
-    font-size: 1.5em;
-    border-radius: 1em;
-    border: none;
-    color: white;
+.dark-button:hover {
+        background-color: #F1D55F;
+        color: #242424;
 }
 
 .quantity-label {

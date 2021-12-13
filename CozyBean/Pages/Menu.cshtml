@@ -32,37 +32,170 @@
             {
                 <h2>Drink Types</h2>
                 <ul>
-                    <li><a class="menu-button" asp-page="Menu" asp-route-menu="Drinks" asp-route-category="Popular" id="popular-drinks-button">Popular</a></li>
-                    <li><a class="menu-button" asp-page="Menu" asp-route-menu="Drinks" asp-route-category="Hot_Coffee" id="hot-coffee-button">Hot Coffee</a></li>
-                    <li><a class="menu-button" asp-page="Menu" asp-route-menu="Drinks" asp-route-category="Hot_Tea" id="hot-tea-button">Hot Tea</a></li>
-                    <li><a class="menu-button" asp-page="Menu" asp-route-menu="Drinks" asp-route-category="Hot_Drinks" id="hot-drinks-button">Other Hot Drinks</a></li>
-                    <li><a class="menu-button" asp-page="Menu" asp-route-menu="Drinks" asp-route-category="Cold_Coffee" id="cold-coffee-button">Cold Coffee</a></li>
-                    <li><a class="menu-button" asp-page="Menu" asp-route-menu="Drinks" asp-route-category="Cold_Tea" id="cold-tea-button">Cold Tea</a></li>
-                    <li><a class="menu-button" asp-page="Menu" asp-route-menu="Drinks" asp-route-category="Cold_Drinks" id="cold-drinks-button">Other Cold Drinks</a></li>
+                    @if (Model.categoryString == "Popular")
+                    {
+                        <li><a class="menu-button active-menu-button" asp-page="Menu" asp-route-menu="Drinks" asp-route-category="Popular">Popular</a></li>
+                    }
+                    else
+                    {
+                        <li><a class="menu-button" asp-page="Menu" asp-route-menu="Drinks" asp-route-category="Popular">Popular</a></li>
+                    }
+                    @if (Model.categoryString == "Hot Coffee")
+                    {
+                        <li><a class="menu-button active-menu-button" asp-page="Menu" asp-route-menu="Drinks" asp-route-category="Hot_Coffee">Hot Coffe</a></li>
+                    }
+                    else
+                    {
+                        <li><a class="menu-button" asp-page="Menu" asp-route-menu="Drinks" asp-route-category="Hot_Coffee">Hot Coffee</a></li>
+                    }
+                    @if (Model.categoryString == "Hot Tea")
+                    {
+                        <li><a class="menu-button active-menu-button" asp-page="Menu" asp-route-menu="Drinks" asp-route-category="Hot_Tea">Hot Tea</a></li>
+                    }
+                    else
+                    {
+                        <li><a class="menu-button" asp-page="Menu" asp-route-menu="Drinks" asp-route-category="Hot_Tea">Hot Tea</a></li>
+                    }
+                    @if (Model.categoryString == "Hot Drinks")
+                    {
+                        <li><a class="menu-button active-menu-button" asp-page="Menu" asp-route-menu="Drinks" asp-route-category="Hot_Drinks">Other Hot Drinks</a></li>
+                    }
+                    else
+                    {
+                        <li><a class="menu-button" asp-page="Menu" asp-route-menu="Drinks" asp-route-category="Hot_Drinks">Other Hot Drinks</a></li>
+                    }
+                    @if (Model.categoryString == "Cold Coffee")
+                    {
+                        <li><a class="menu-button active-menu-button" asp-page="Menu" asp-route-menu="Drinks" asp-route-category="Cold_Coffee">Cold Coffee</a></li>
+                    }
+                    else
+                    {
+                        <li><a class="menu-button" asp-page="Menu" asp-route-menu="Drinks" asp-route-category="Cold_Coffee">Cold Coffee</a></li>
+                    }
+                    @if (Model.categoryString == "Cold Tea")
+                    {
+                        <li><a class="menu-button active-menu-button" asp-page="Menu" asp-route-menu="Drinks" asp-route-category="Cold_Tea">Cold Tea</a></li>
+                    }
+                    else
+                    {
+                        <li><a class="menu-button" asp-page="Menu" asp-route-menu="Drinks" asp-route-category="Cold_Tea">Cold Tea</a></li>
+                    }
+                    @if (Model.categoryString == "Cold Drinks")
+                    {
+                        <li><a class="menu-button active-menu-button" asp-page="Menu" asp-route-menu="Drinks" asp-route-category="Cold_Drinks">Other Cold Drinks</a></li>
+                    }
+                    else
+                    {
+                        <li><a class="menu-button" asp-page="Menu" asp-route-menu="Drinks" asp-route-category="Cold_Drinks">Other Cold Drinks</a></li>
+                    }
                 </ul>
             }
             @if (Model.menuString == "food")
             {
                 <h2>Food Types</h2>
                 <ul>
-                    <li><a class="menu-button" asp-page="Menu" asp-route-menu="Food" asp-route-category="Popular" id="popular-food-button">Popular</a></li>
-                    <li><a class="menu-button" asp-page="Menu" asp-route-menu="Food" asp-route-category="Muffins" id="muffins-button">Muffins</a></li>
-                    <li><a class="menu-button" asp-page="Menu" asp-route-menu="Food" asp-route-category="Pastries" id="pastries-button">Pastries</a></li>
-                    <li><a class="menu-button" asp-page="Menu" asp-route-menu="Food" asp-route-category="Cakes" id="cakes-button">Cakes</a></li>
-                    <li><a class="menu-button" asp-page="Menu" asp-route-menu="Food" asp-route-category="Pies" id="pies-button">Pies</a></li>
-                    <li><a class="menu-button" asp-page="Menu" asp-route-menu="Food" asp-route-category="Cookies" id="cookies-button">Cookies</a></li>
-                    <li><a class="menu-button" asp-page="Menu" asp-route-menu="Food" asp-route-category="Snacks" id="snacks-button">Snacks</a></li>
+                    @if (Model.categoryString == "Popular")
+                    {
+                        <li><a class="menu-button active-menu-button" asp-page="Menu" asp-route-menu="Food" asp-route-category="Popular">Popular</a></li>
+                    }
+                    else
+                    {
+                        <li><a class="menu-button" asp-page="Menu" asp-route-menu="Food" asp-route-category="Popular">Popular</a></li>
+                    }
+                    @if (Model.categoryString == "Muffins")
+                    {
+                        <li><a class="menu-button active-menu-button" asp-page="Menu" asp-route-menu="Food" asp-route-category="Muffins">Muffins</a></li>
+                    }
+                    else
+                    {
+                        <li><a class="menu-button" asp-page="Menu" asp-route-menu="Food" asp-route-category="Muffins">Muffins</a></li>
+                    }
+                    @if (Model.categoryString == "Pastries")
+                    {
+                        <li><a class="menu-button active-menu-button" asp-page="Menu" asp-route-menu="Food" asp-route-category="Pastries">Pastries</a></li>
+                    }
+                    else
+                    {
+                        <li><a class="menu-button" asp-page="Menu" asp-route-menu="Food" asp-route-category="Pastries">Pastries</a></li>
+                    }
+                    @if (Model.categoryString == "Cakes")
+                    {
+                        <li><a class="menu-button active-menu-button" asp-page="Menu" asp-route-menu="Food" asp-route-category="Cakes">Cakes</a></li>
+                    }
+                    else
+                    {
+                        <li><a class="menu-button" asp-page="Menu" asp-route-menu="Food" asp-route-category="Cakes">Cakes</a></li>
+                    }
+                    @if (Model.categoryString == "Pies")
+                    {
+                        <li><a class="menu-button active-menu-button" asp-page="Menu" asp-route-menu="Food" asp-route-category="Pies">Pies</a></li>
+                    }
+                    else
+                    {
+                        <li><a class="menu-button" asp-page="Menu" asp-route-menu="Food" asp-route-category="Pies">Pies</a></li>
+                    }
+                    @if (Model.categoryString == "Cookies")
+                    {
+                        <li><a class="menu-button active-menu-button" asp-page="Menu" asp-route-menu="Food" asp-route-category="Cookies">Cookies</a></li>
+                    }
+                    else
+                    {
+                        <li><a class="menu-button" asp-page="Menu" asp-route-menu="Food" asp-route-category="Cookies">Cookies</a></li>
+                    }
+                    @if (Model.categoryString == "Snacks")
+                    {
+                        <li><a class="menu-button active-menu-button" asp-page="Menu" asp-route-menu="Food" asp-route-category="Snacks">Snacks</a></li>
+                    }
+                    else
+                    {
+                        <li><a class="menu-button" asp-page="Menu" asp-route-menu="Food" asp-route-category="Snacks">Snacks</a></li>
+                    }
                 </ul>
             }
             @if (Model.menuString == "meals")
             {
                 <h2>Meal Types</h2>
                 <ul>
-                    <li><a class="menu-button" asp-page="Menu" asp-route-menu="Meals" asp-route-category="Popular" id="popular-meals-button">Popular</a></li>
-                    <li><a class="menu-button" asp-page="Menu" asp-route-menu="Meals" asp-route-category="Sandwiches" id="sandwiches-button">Sandwiches</a></li>
-                    <li><a class="menu-button" asp-page="Menu" asp-route-menu="Meals" asp-route-category="Wraps" id="wraps-button">Wraps</a></li>
-                    <li><a class="menu-button" asp-page="Menu" asp-route-menu="Meals" asp-route-category="Soups" id="soups-button">Soups</a></li>
-                    <li><a class="menu-button" asp-page="Menu" asp-route-menu="Meals" asp-route-category="Salads" id="salads-button">Salads</a></li>
+                    @if (Model.categoryString == "Popular")
+                    {
+                        <li><a class="menu-button active-menu-button" asp-page="Menu" asp-route-menu="Meals" asp-route-category="Popular">Popular</a></li>
+                    }
+                    else
+                    {
+                        <li><a class="menu-button" asp-page="Menu" asp-route-menu="Meals" asp-route-category="Popular">Popular</a></li>
+                    }
+                    @if (Model.categoryString == "Sandwiches")
+                    {
+                        <li><a class="menu-button active-menu-button" asp-page="Menu" asp-route-menu="Meals" asp-route-category="Sandwiches">Sandwiches</a></li>
+                    }
+                    else
+                    {
+                        <li><a class="menu-button" asp-page="Menu" asp-route-menu="Meals" asp-route-category="Sandwiches">Sandwiches</a></li>
+                    }
+                    @if (Model.categoryString == "Wraps")
+                    {
+                        <li><a class="menu-button active-menu-button" asp-page="Menu" asp-route-menu="Meals" asp-route-category="Wraps">Wraps</a></li>
+                    }
+                    else
+                    {
+                        <li><a class="menu-button" asp-page="Menu" asp-route-menu="Meals" asp-route-category="Wraps">Wraps</a></li>
+                    }
+                    @if (Model.categoryString == "Soups")
+                    {
+                        <li><a class="menu-button active-menu-button" asp-page="Menu" asp-route-menu="Meals" asp-route-category="Soups">Soups</a></li>
+                    }
+                    else
+                    {
+                        <li><a class="menu-button" asp-page="Menu" asp-route-menu="Meals" asp-route-category="Soups">Soups</a></li>
+                    }
+                    @if (Model.categoryString == "Salads")
+                    {
+                        <li><a class="menu-button active-menu-button" asp-page="Menu" asp-route-menu="Meals" asp-route-category="Salads">Salads</a></li>
+                    }
+                    else
+                    {
+                        <li><a class="menu-button" asp-page="Menu" asp-route-menu="Meals" asp-route-category="Salads">Salads</a></li>
+                    }
                 </ul>
             }
         </div>
@@ -74,24 +207,26 @@
         <div class="row">
             @foreach (var item in Model.menuItems)
             {
-                <div class="col-3 card">
+            <div class="col-3 card">
+                <a asp-page="Order" asp-route-id=@item.ID>
                     <div class="card-img-top">
-                        <a asp-page="Order" asp-route-id=@item.ID><img src=@item.ImageURL class="menu-item-image" /></a>
+                        <img src=@item.ImageURL class="menu-item-image" />
                     </div>
                     <div class="card-text-bottom">
-                        <h3><a asp-page="Order" asp-route-id=@item.ID>@item.Name</a></h3>
+                        <h4>@item.Name</h4>
                         <p>@item.Description</p>
                     </div>
-                </div>
+                </a>
+            </div>
             }
         </div>
     </div>
 </div>
 <div id="order-popout">
+    <div class="row">
+        <button href="#" class="w-100 p-3 dark-button" id="cart-button">Place Order</button>
+    </div>
     <div class="row" id="order">
 
-    </div>
-    <div class="row">
-        <button href="#" class="w-100 p-3" id="cart-button">Place Order</button>
     </div>
 </div> 

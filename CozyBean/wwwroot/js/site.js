@@ -1,7 +1,7 @@
 ﻿$(document).ready(() => {
     let order = sessionStorage.getItem("order") 
 
-    if (order != null && (document.title === "Menu - CozyBean" || document.title === "Checkout - CozyBean")) {
+    if (order != null && (document.title === "Menu - CozyBean" || document.title === "Order - CozyBean")) {
         orderArray = order.split(";")
         var dot = document.createElement("SPAN")
         dot.innerHTML = `<h3>${orderArray.length-1}</h3>`
@@ -116,12 +116,19 @@
         }, 200)
     })
 
+    $('.btn').on('mousedown', (event) => {
+        $(event.currentTarget).css("background-color", "#F1CA26")
+    })
+
 
     $('.card').on('mouseenter', (event) => {
-        $(event.currentTarget).animate({ padding: "0.5em" }, 200)
+        $(event.currentTarget).css("background-color", "#755151")
     })
     $('.card').on('mouseleave', (event) => {
-        $(event.currentTarget).animate({padding: 0}, 200)
+        $(event.currentTarget).css("background-color", "#242424")
+    })
+    $('.card').on('mousedown', (event) => {
+        $(event.currentTarget).css("background-color", "#727B6D")
     })
 
 
@@ -134,7 +141,9 @@
         $(event.currentTarget).find('.image-back').fadeOut(400)
     })
 
-
+    $('.dark-button').on('mousedown', (event) => {
+        $(event.currentTarget).css("background-color", "#F1CA26")
+    })
 
     //order form
 
