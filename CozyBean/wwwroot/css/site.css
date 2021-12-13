@@ -345,6 +345,19 @@ html {
     margin-left: 20%;
 }
 
+.shopping-dot {
+    height: 40px;
+    width: 40px;
+    background-color: red;
+    border-radius: 50%;
+    position:absolute;
+    color: white;
+    right:50px;
+    top:50px;
+}
+.shopping-dropper {
+    cursor:pointer;
+}
 
 @media only screen and (max-width: 768px) {
     #order-ahead {

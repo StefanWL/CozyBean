@@ -1,9 +1,14 @@
 ﻿$(document).ready(() => {
-    let order = sessionStorage.getItem("order")
-    let orderArray = []
+    let order = sessionStorage.getItem("order") 
 
-    if (order != null) {
+    if (order != null && (document.title === "Menu - CozyBean" || document.title === "Checkout - CozyBean")) {
         orderArray = order.split(";")
+        var dot = document.createElement("SPAN")
+        dot.innerHTML = `<h3>${orderArray.length-1}</h3>`
+        dot.classList.add('shopping-dot')
+        dot.classList.add('text-center')
+        dot.classList.add('shopping-dropper')
+        document.body.appendChild(dot)
     }
 
     // checkout
@@ -264,7 +269,7 @@
     })
 
 
-    $('#shopping-bag').on('click', () => {
+    $('.shopping-dropper').on('click', () => {
         let orderArray = []
 
         if (order != null) {
@@ -314,7 +319,7 @@
         orderContainer.innerHTML = orderHTML
     })
 
-    $('#shopping-bag').on('click', () => {
+    $('.shopping-dropper').on('click', () => {
         $('#order-popout').slideToggle(300)
     })
 
