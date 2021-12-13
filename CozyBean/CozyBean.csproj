@@ -15,7 +15,6 @@
     <Content Remove="wwwroot\Content\" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="wwwroot\Content\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
