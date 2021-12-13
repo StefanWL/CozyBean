@@ -9,6 +9,7 @@
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="5.0.10" />
     <PackageReference Include="MySql.Data" Version="8.0.27" />
     <PackageReference Include="Microsoft.Data.SqlClient" Version="4.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Cors" Version="2.2.0" />
   </ItemGroup>
 
   <ItemGroup>
@@ -21,5 +22,7 @@
     <None Remove="Models\" />
     <None Remove="MySql.Data" />
     <None Remove="Microsoft.Data.SqlClient" />
+    <None Remove="Microsoft.AspNet.Cors" />
+    <None Remove="Microsoft.AspNetCore.Cors" />
   </ItemGroup>
 </Project>

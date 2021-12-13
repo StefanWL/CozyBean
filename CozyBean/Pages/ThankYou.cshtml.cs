@@ -7,19 +7,10 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace CozyBean.Pages
 {
-    public class CheckoutModel : PageModel
+    public class ThankYouModel : PageModel
     {
-        public class Order
-        {
-            public string Items { get; set; }
-            public string Quantities { get; set; }
-        }
         public void OnGet()
         {
-        }
-        public void OnPost([FromBody] Order order)
-        {
-
         }
     }
 }

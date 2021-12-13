@@ -87,8 +87,24 @@
         orderButton.addEventListener("click", (event) => { event.preventDefault() })
 
         const finalizeOrder = () => {
-            sessionStorage.clear()
-            location.reload()
+
+            const quantityElements = document.getElementsByClassName('item-quantity')
+            let quantities = ""
+
+            for (i = 0; i < quantityElements.length; i++) {
+                quantities = quantities + quantityElements[i].value + ","
+            }
+
+            finalOrder = { "Items": order, "Quantities": quantities}
+
+            $.ajax({
+                url: '',
+                method: 'POST',
+                contentType: 'application/json; charset=utf-8',
+                data: JSON.stringify(finalOrder)
+            })
+            //sessionStorage.clear()
+            //location.reload()
         }
 
         orderButton.onclick = finalizeOrder
@@ -97,17 +113,13 @@
     $('.item-quantity').on('change', (event) => {
         const itemNum = $(event.currentTarget).attr('name')
         let itemQuant = Number($(event.currentTarget).val())
-        console.log(itemQuant)
 
         const tableRow = document.getElementById(itemNum)
         const price = Number($(`#${itemNum}`).attr('title'))
-        console.log(price)
         const subTotal = Number(tableRow.innerHTML.substring(1))
-        console.log(subTotal)
 
         const grandTotal = document.getElementById("total-value")
         const priorTotal = Number(grandTotal.innerHTML.substring(1))
-        console.log(priorTotal)
         grandTotal.innerHTML = "$" + (priorTotal - subTotal + price * itemQuant)
         tableRow.innerHTML = "$" + (price * itemQuant)
 
