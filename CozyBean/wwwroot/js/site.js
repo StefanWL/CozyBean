@@ -58,8 +58,8 @@
                         sizeString + milkString + sugarString + warmString +
                     '</div>' +
                     '<div class="col-0 col-sm-6">' +
-                        `<input class="item-quantity float-right" type="number" name="quantity-${i}" value="1">` +
-                        `<label class="quantity-label float-right" for="quantity-${i}">Quantity: </label>` +
+                        `<input class="item-quantity float-right" min="0" step="1" type="number" name="quantity-${i}" value="1">` +
+                        `<label class="quantity-label float-right mr-5" for="quantity-${i}">Quantity: </label>` +
                     '</div>' +
                 '</div>'
    
@@ -74,7 +74,7 @@
         }
 
         priceHTML = priceHTML +
-            '<tr>' +
+            '<tr class="total-row">' +
             '<td>Total</td>' +
             `<td>$${total}</td>` +
             '</tr>'
@@ -96,10 +96,10 @@
 
     // interactions
     $('.nav-link').on('mouseenter', (event) => {
-        $(event.currentTarget).siblings().animate({width: "100%"},200)
+        $(event.currentTarget).parent().find('.nav-underline-hidden').animate({ width: "100%" }, 200)
     })
     $('.nav-link').on('mouseleave', (event) => {
-        $(event.currentTarget).siblings().animate({ width: 0}, 200)
+        $(event.currentTarget).parent().find('.nav-underline-hidden').animate({ width: 0}, 200)
     })
 
 
@@ -140,6 +140,11 @@
         $(event.currentTarget).find('.image-front').fadeIn(400)
         $(event.currentTarget).find('.image-back').fadeOut(400)
     })
+    $('.reveal-panel').on('mousedown', (event) => {
+        $(event.currentTarget).find('.panel-arrow').animate({
+            marginLeft: "+=1.5em",
+        }, 150)
+    })
 
     $('.dark-button').on('mousedown', (event) => {
         $(event.currentTarget).css("background-color", "#F1CA26")
@@ -148,7 +153,9 @@
     //order form
 
     const originalCalories = Number($('#calorie-amount').html())
-    const originalPrice = Number($('#price-amount').html())
+    if (document.title === "Order - CozyBean") {
+        const originalPrice = Number($('#price-amount').html().substring(1))
+    }
 
     const calorieUpdate = () => {
         const drinkSize = $('#drink-size').html()
@@ -239,7 +246,7 @@
                 break;
         }
 
-        document.getElementById("price-amount").innerHTML = originalPrice + sizeChange
+        document.getElementById("price-amount").innerHTML = `$${originalPrice + sizeChange}`
 
     }
 

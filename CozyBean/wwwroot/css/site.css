@@ -33,6 +33,10 @@ a .navbar-brand {
     word-break: break-all;
 }
 
+a h2{
+    color:black;
+}
+
 a:hover{
     text-decoration:none;
 }
@@ -153,21 +157,23 @@ a:hover{
 }
 
 .nav-underline-active {
+    margin-top: 0.5em;
     width: 100%;
     height: 2px;
     background-color: black;
 }
 .nav-underline-hidden {
-    margin-top: 1em;
+    margin-top: 0.5em;
     width: 0;
     height: 2px;
     background-color: black;
 }
 
-.nav-link{
+.nav-link {
     font-size: 1.2em;
-    padding-bottom:0;
-    margin-right:1em;
+    padding-bottom: 0;
+    margin-left: 0.5em;
+    margin-right: 0.5em;
 }
 
 .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
@@ -186,6 +192,7 @@ a:hover{
 }
 
 .image-back {
+    height:100%;
     position: absolute;
     right: 0;
     bottom: 0;
@@ -197,6 +204,14 @@ a:hover{
     padding-bottom: 2em;
     padding-left: 2em;
     color: white;
+}
+.panel-arrow {
+    width: 50px;
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 0.5em;
+    margin-left: 4em;
+    z-index: 1000
 }
 
 #friends-image {
@@ -268,10 +283,6 @@ button.accept-policy {
     padding-bottom: 5%;
 }
 
-#order-image {
-    border: solid white 2px;
-}
-
 .customization-option {
     background-color: #242424;
     border-radius: 1em;
@@ -279,6 +290,10 @@ button.accept-policy {
     padding: 0.5em;
     color: white;
     margin-top: 1em;
+}
+
+#image-container {
+    padding: 5%
 }
 
 #order-summary-border {
@@ -292,6 +307,10 @@ button.accept-policy {
 #order-summary {
     font-size: 1.5em;
     margin-bottom: 2em;
+}
+
+.cart-image {
+    border-radius: 0.5em;
 }
 
 .dark-button {
@@ -317,6 +336,9 @@ button.accept-policy {
     font-size: 1.5em;
     border-radius: 0.5em;
     width: 10%
+}
+.total-row {
+    border-top: solid black 2px;
 }
 
 #order-popout {
