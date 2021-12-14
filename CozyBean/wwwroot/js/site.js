@@ -187,6 +187,13 @@
         $(event.currentTarget).css("background-color", "#F1CA26")
     })
 
+    $('.unused-menu-option').on('mouseenter', (event) => {
+        $(event.currentTarget).css("color", "#F1D55F")
+    })
+    $('.unused-menu-option').on('mouseleave', (event) => {
+        $(event.currentTarget).css("color", "white")
+    })
+
     //order form
 
     const originalCalories = Number($('#calorie-amount').html())

@@ -8,9 +8,31 @@
     <div class="col-10 col-sm-6 col-lg-4 food-menu mb-5">
         <div class="container">
             <div class="row">
-                <div class="col-4 text-center"><a asp-page="Menu" asp-route-menu="Drinks" asp-route-category="Popular" class="button menu-option">Drinks</a></div>
-                <div class="col-4 text-center"><a asp-page="Menu" asp-route-menu="Food" asp-route-category="Popular" class="button menu-option">Food</a></div>
-                <div class="col-4 text-center"><a asp-page="Menu" asp-route-menu="Meals" asp-route-category="Popular" class="button menu-option">Meals</a></div>
+
+                @if (Model.menuString == "drinks")
+                {
+                    <div class="col-4 text-center"><a asp-page="Menu" asp-route-menu="Drinks" asp-route-category="Popular" class="button menu-option active-menu-option">Drinks</a></div>
+                }
+                else
+                {
+                    <div class="col-4 text-center"><a asp-page="Menu" asp-route-menu="Drinks" asp-route-category="Popular" class="button menu-option unused-menu-option">Drinks</a></div>
+                }
+                @if (Model.menuString == "food")
+                {
+                    <div class="col-4 text-center"><a asp-page="Menu" asp-route-menu="Food" asp-route-category="Popular" class="button menu-option active-menu-option">Food</a></div>
+                }
+                else
+                {
+                    <div class="col-4 text-center"><a asp-page="Menu" asp-route-menu="Food" asp-route-category="Popular" class="button unused-menu-option">Food</a></div>
+                }
+                @if (Model.menuString == "meals")
+                {
+                    <div class="col-4 text-center"><a asp-page="Menu" asp-route-menu="Meals" asp-route-category="Popular" class="button menu-option active-menu-option">Meals</a></div>
+                }
+                else
+                {
+                    <div class="col-4 text-center"><a asp-page="Menu" asp-route-menu="Meals" asp-route-category="Popular" class="button unused-menu-option">Meals</a></div>
+                }
             </div>
         </div>
     </div>

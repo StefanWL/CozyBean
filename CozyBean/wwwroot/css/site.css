@@ -235,7 +235,9 @@ a:hover{
 
 }
 
-
+.active-menu-option {
+    color: #F1D55F !important;
+}
 /* Sticky footer styles
 -------------------------------------------------- */
 html {
@@ -324,6 +326,9 @@ button.accept-policy {
 
 .reduced-text{
     font-size: 0.8em;
+}
+.reduced-padding {
+    padding: 10%
 }
 
 .dark-button {
