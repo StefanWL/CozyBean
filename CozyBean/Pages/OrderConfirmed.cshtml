@@ -1,0 +1,31 @@
+﻿@page "/OrderConfirmed/{order}/{quantities}"
+@model CozyBean.Pages.OrderConfirmedModel
+@{
+    ViewData["Title"] = "Order Confirmation";
+
+}
+<div class="container-fluid p-0">
+    <div class="row justify-content-center">
+        <div class="col-12 col-sm-4">
+            <h1>Thank you for your order!</h1>
+            <p>Our staff is currently working hard to make your order perfection.</p>
+            <p>Your order will be ready at:</p>
+            <strong><p id="ready-time"></p></strong>
+            <p>and we'll keep it available until:</p>
+            <strong><p id="off-time"></p></strong>
+            <p>Thanks again!</p>
+            <p>@Model.debug</p>
+        </div>
+        <div class="col-12 col-sm-4 padded-text">
+            <img src="~/Content/orderconfirmation.png" class="image-fit" />
+        </div>
+    </div>
+</div>
+
+
+
+<script>
+    if (window.history.replaceState) {
+        window.history.replaceState( null, null, window.location.href );
+    }
+</script>

@@ -24,6 +24,7 @@
         let orderHTML = ""
         let priceHTML = ""
         let total = 0
+        let orderQuery = ""
 
         for (i = 1; i < orderArray.length; i++) {
             const itemString = orderArray[i]
@@ -70,6 +71,8 @@
                 `<td id="quantity-${i}" title="${itemArray[6]}">$${itemArray[6]}</td>` +
                 '</tr>'
 
+            orderQuery = orderQuery + itemArray[0] + ";"
+
             total += Number(itemArray[6])
         }
 
@@ -92,18 +95,25 @@
             let quantities = ""
 
             for (i = 0; i < quantityElements.length; i++) {
-                quantities = quantities + quantityElements[i].value + ","
+                quantities = quantities + quantityElements[i].value + ";"
             }
 
-            finalOrder = { "Items": order, "Quantities": quantities}
 
 
 
             sessionStorage.clear()
-            window.location.href = "/ThankYou"
+            window.location.href = `/OrderConfirmed/${orderQuery}/${quantities}`
         }
 
         orderButton.onclick = finalizeOrder
+    }
+
+    if (document.title === "Order Confirmation - CozyBean") {
+        var today = new Date();
+        var readyTime = new Date(today.getTime() + 600000)
+        var doneTime = new Date(today.getTime() + 1800000)
+        document.getElementById('ready-time').innerHTML = (((readyTime.getHours() - 1) % 12) + 1) + ":" + readyTime.getMinutes()
+        document.getElementById('off-time').innerHTML = (((doneTime.getHours() - 1) % 12) + 1)+ ":" + doneTime.getMinutes()
     }
 
     $('.item-quantity').on('change', (event) => {
