@@ -140,8 +140,8 @@
 
         const grandTotal = document.getElementById("total-value")
         const priorTotal = Number(grandTotal.innerHTML.substring(1))
-        grandTotal.innerHTML = "$" + (priorTotal - subTotal + price * itemQuant)
-        tableRow.innerHTML = "$" + (price * itemQuant)
+        grandTotal.innerHTML = "$" + (priorTotal - subTotal + price * itemQuant).toFixed(2)
+        tableRow.innerHTML = "$" + (price * itemQuant).toFixed(2)
 
     })
 
@@ -305,7 +305,7 @@
                 break;
         }
 
-        document.getElementById("price-amount").innerHTML = `$${originalPrice + sizeChange}`
+        document.getElementById("price-amount").innerHTML = `$${(originalPrice + sizeChange).toFixed(2)}`
 
     }
 
