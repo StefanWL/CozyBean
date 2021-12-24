@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using CozyBean.Models;
-using Microsoft.Data.SqlClient;
+using MySql.Data.MySqlClient;
 
 namespace CozyBean.Pages
 {
@@ -17,16 +17,16 @@ namespace CozyBean.Pages
 
         public void OnGet(int id)
         {
-            SqlConnection Conn = CozyBean.AccessDatabase();
+            MySqlConnection Conn = CozyBean.AccessDatabase();
             Conn.Open();
 
-            SqlCommand cmd = new SqlCommand();
+            MySqlCommand cmd = new MySqlCommand();
             cmd.Connection = Conn;
             cmd.CommandType = System.Data.CommandType.Text;
 
             cmd.CommandText = $"Select * from Menu where id = {id}";
 
-            SqlDataReader ResultSet = cmd.ExecuteReader();
+            MySqlDataReader ResultSet = cmd.ExecuteReader();
 
             while (ResultSet.Read())
             {

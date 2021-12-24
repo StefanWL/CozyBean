@@ -1,5 +1,6 @@
 ﻿using System;
-using Microsoft.Data.SqlClient;
+using MySql.Data.MySqlClient;
+using System.Text.RegularExpressions;
 
 
 namespace CozyBean.Models
@@ -16,18 +17,27 @@ namespace CozyBean.Models
         {
             get
             {
+                string connection = Environment.GetEnvironmentVariable("MYSQLCONNSTR_localdb");
+                var dbhost = Regex.Match(connection, @"Data Source=(.+?);").Groups[1].Value;
+                var server = dbhost.Split(':')[0].ToString();
+                var port = dbhost.Split(':')[1].ToString();
+                var dbname = Regex.Match(connection, @"Database=(.+?);").Groups[1].Value;
+                var dbusername = Regex.Match(connection, @"User Id=(.+?);").Groups[1].Value;
+                var dbpassword = Regex.Match(connection, @"Password=(.+?)$").Groups[1].Value;
+
+                return $@"server={server};userid={dbusername};password={dbpassword};database={dbname};port={port};pooling = false; convert zero datetime=True;";
                 //Concatonating connnection string values into a single line with proper formating
-                return "Server=tcp:cozybean.database.windows.net,1433;" +
-                "Database=menu;User ID=stefanwhittakerlee;" +
-                "Password=CXZfmpq7;Encrypt=True;" +
-                "TrustServerCertificate=False;Connection Timeout=30;";
+                //return "Server=tcp:cozybean.database.windows.net,1433;" +
+                //"Database=menu;User ID=stefanwhittakerlee;" +
+                //"Password=CXZfmpq7;Encrypt=True;" +
+                //"TrustServerCertificate=False;Connection Timeout=30;";
             }
         }
 
-        public SqlConnection AccessDatabase()
+        public MySqlConnection AccessDatabase()
         {
             //Accessing Database with connection string
-            return new SqlConnection("Server = tcp:cozybean.database.windows.net, 1433; Initial Catalog = cozybean; Persist Security Info = False; User ID = stefanwhittakerlee; Password = CXZfmpq7; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30;");
+            return new MySqlConnection(ConnectionString);
         }
 
     }

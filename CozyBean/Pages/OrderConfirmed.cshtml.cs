@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using CozyBean.Models;
-using Microsoft.Data.SqlClient;
+using MySql.Data.MySqlClient;
 
 
 namespace CozyBean.Pages
@@ -25,18 +25,18 @@ namespace CozyBean.Pages
 
             for (int i = 0; i < items.Length; i++)
             {
-                SqlConnection Conn = CozyBean.AccessDatabase();
+                MySqlConnection Conn = CozyBean.AccessDatabase();
                 Conn.Open();
 
                 int total = 0;
 
-                SqlCommand cmd = new SqlCommand();
+                MySqlCommand cmd = new MySqlCommand();
                 cmd.Connection = Conn;
                 cmd.CommandType = System.Data.CommandType.Text;
 
                 cmd.CommandText = $"SELECT Sales FROM Menu WHERE Name = '{items[i]}' ";
 
-                SqlDataReader ResultSet = cmd.ExecuteReader();
+                MySqlDataReader ResultSet = cmd.ExecuteReader();
 
                 while (ResultSet.Read())
                 {
@@ -52,9 +52,9 @@ namespace CozyBean.Pages
 
             for (int i = 0; i < items.Length; i++)
             {
-                SqlConnection Conn = CozyBean.AccessDatabase();
+                MySqlConnection Conn = CozyBean.AccessDatabase();
                 Conn.Open();
-                SqlCommand cmd2 = new SqlCommand();
+                MySqlCommand cmd2 = new MySqlCommand();
                 cmd2.Connection = Conn;
                 cmd2.CommandType = System.Data.CommandType.Text;
 

@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using CozyBean.Models;
-using Microsoft.Data.SqlClient;
+using MySql.Data.MySqlClient;
 
 
 namespace CozyBean.Pages
@@ -22,17 +22,17 @@ namespace CozyBean.Pages
         public void OnGet(string menu, string category)
         {
 
-            SqlConnection Conn = CozyBean.AccessDatabase();
+            MySqlConnection Conn = CozyBean.AccessDatabase();
             Conn.Open();
 
-            SqlCommand cmd = new SqlCommand();
+            MySqlCommand cmd = new MySqlCommand();
             cmd.Connection = Conn;
             cmd.CommandType = System.Data.CommandType.Text;
 
 
             if (category == "Popular")
             {
-                cmd.CommandText = $"SELECT TOP 6 * FROM Menu WHERE Menu = '{menu}' ORDER BY sales DESC";
+                cmd.CommandText = $"SELECT * FROM Menu WHERE Menu = '{menu}' ORDER BY sales DESC LIMIT 6 ";
             }
             else
             {
@@ -40,7 +40,7 @@ namespace CozyBean.Pages
             }
 
 
-            SqlDataReader ResultSet = cmd.ExecuteReader();
+            MySqlDataReader ResultSet = cmd.ExecuteReader();
 
             while (ResultSet.Read())
             {

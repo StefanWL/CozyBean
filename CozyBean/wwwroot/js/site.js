@@ -14,7 +14,6 @@
     // checkout
 
     if (document.title === "Checkout - CozyBean") {
-
         const orderArray = order.split(";")
 
         const orderContainer = document.getElementById("order-container")
@@ -51,19 +50,19 @@
 
             orderHTML = orderHTML +
                 `<div class="row pt-5 pb-5">` +
-                    '<div class="col-5 col-sm-2">' +
-                        `${itemArray[7]}` +
-                    '</div>' +
-                    '<div class="col-7 col-sm-4">' +
-                        `<h3>${itemArray[0]}</h3>` +
-                        sizeString + milkString + sugarString + warmString +
-                    '</div>' +
-                    '<div class="col-0 col-sm-6">' +
-                        `<input class="item-quantity float-right" min="0" step="1" type="number" name="quantity-${i}" value="1">` +
-                        `<label class="quantity-label float-right mr-5" for="quantity-${i}">Quantity: </label>` +
-                    '</div>' +
+                '<div class="col-5 col-sm-2">' +
+                `${itemArray[7]}` +
+                '</div>' +
+                '<div class="col-7 col-sm-4">' +
+                `<h3>${itemArray[0]}</h3>` +
+                sizeString + milkString + sugarString + warmString +
+                '</div>' +
+                '<div class="col-0 col-sm-6">' +
+                `<input class="item-quantity float-right" min="0" step="1" type="number" name="quantity-${i}" value="1">` +
+                `<label class="quantity-label float-right mr-5" for="quantity-${i}">Quantity: </label>` +
+                '</div>' +
                 '</div>'
-   
+
 
             priceHTML = priceHTML +
                 '<tr>' +
@@ -112,8 +111,23 @@
         var today = new Date();
         var readyTime = new Date(today.getTime() + 600000)
         var doneTime = new Date(today.getTime() + 1800000)
-        document.getElementById('ready-time').innerHTML = (((readyTime.getHours() - 1) % 12) + 1) + ":" + readyTime.getMinutes()
-        document.getElementById('off-time').innerHTML = (((doneTime.getHours() - 1) % 12) + 1)+ ":" + doneTime.getMinutes()
+
+        if (readyTime.getMinutes() > 9) {
+            readyMinutes = readyTime.getMinutes()
+        }
+        else {
+            readyMinutes = "0" + readyTime.getMinutes()
+        }
+
+        if (doneTime.getMinutes() > 9) {
+            doneMinutes = doneTime.getMinutes()
+        }
+        else {
+            doneMinutes = "0" + doneTime.getMinutes()
+        }
+
+        document.getElementById('ready-time').innerHTML = (((readyTime.getHours() - 1) % 12) + 1) + ":" + readyMinutes
+        document.getElementById('off-time').innerHTML = (((doneTime.getHours() - 1) % 12) + 1) + ":" + doneMinutes
     }
 
     $('.item-quantity').on('change', (event) => {
@@ -197,8 +211,9 @@
     //order form
 
     const originalCalories = Number($('#calorie-amount').html())
-    if (document.title === "Order - CozyBean") {
-        const originalPrice = Number($('#price-amount').html().substring(1))
+    let originalPrice
+    if (document.title == "Order - CozyBean") {
+        originalPrice = Number($('#price-amount').html().substring(1))
     }
 
     const calorieUpdate = () => {
