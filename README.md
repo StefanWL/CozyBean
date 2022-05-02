@@ -13,7 +13,7 @@ Orders to the site update sales values in the database to simulate real values f
 # Team
 Riley Barnes - Visual Design Lead - Wireframes, Mockups, Overall Visual Design
 <br />
-Marissa Cuffy - UX Lead - User Testing, Interation Mockups
+Marissa Cuffy - UX Lead - User Testing, Interaction Mockups
 <br />
 Ferid Duruk - Content Strategist - Menu Content
 <br />
