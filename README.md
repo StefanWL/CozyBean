@@ -19,4 +19,4 @@ Ferid Duruk - Content Strategist - Menu Content
 <br />
 Leo Nguyen - Team Lead - Location Page, Minutes
 <br />
-Stefan Whittaker-Lee - Dev Ops Lead - Hosting, Server-side Code, Database, Client-side Code, HTML/CSS
+Stefan Whittaker-Lee - Dev Ops - Hosting, Server-side Code, Database, Client-side Code, HTML/CSS
