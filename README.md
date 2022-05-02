@@ -10,7 +10,7 @@ Interactions were designed around feedback from testing with real users to impro
 Data for the menu is saved in a MySQL database and is retrieved and rendered to the page using C#/.NET.
 Orders to the site update sales values in the database to simulate real values for popular items
 
-#Team
+# Team
 Riley Barnes - Visual Design Lead - Wireframes, Mockups, Overall Visual Design
 Marissa Cuffy - UX Lead - User Testing, Interation Mockups
 Ferid Duruk - Content Strategist - Menu Content
