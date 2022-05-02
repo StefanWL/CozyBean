@@ -12,7 +12,11 @@ Orders to the site update sales values in the database to simulate real values f
 
 # Team
 Riley Barnes - Visual Design Lead - Wireframes, Mockups, Overall Visual Design
+<br />
 Marissa Cuffy - UX Lead - User Testing, Interation Mockups
+<br />
 Ferid Duruk - Content Strategist - Menu Content
+<br />
 Leo Nguyen - Team Lead - Location Page, Minutes
+<br />
 Stefan Whittaker-Lee - Dev Ops Lead - Hosting, Server-side Code, Database, Client-side Code, HTML/CSS
